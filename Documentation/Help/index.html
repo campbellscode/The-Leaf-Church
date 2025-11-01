@@ -1,0 +1,152 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<head lang="en">
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<title>Template Documentation Template</title>
+	<!-- Framework CSS -->
+	<link rel="stylesheet" href="assets/blueprint-css/screen.css" type="text/css" media="screen, projection">
+	<link rel="stylesheet" href="assets/blueprint-css/print.css" type="text/css" media="print">
+	<!--[if lt IE 8]><link rel="stylesheet" href="assets/blueprint-css/ie.css" type="text/css" media="screen, projection"><![endif]-->
+	<link rel="stylesheet" href="assets/blueprint-css/plugins/fancy-type/screen.css" type="text/css" media="screen, projection">
+	<style type="text/css" media="screen">
+		p, table, hr, .box { margin-bottom:25px; }
+		.box p { margin-bottom:10px; }
+		p{margin:0; padding:0;}
+		hr{ height:1px; margin:40px 0 40px 0;}
+		pre {
+		  display:block;
+		  font:normal 12px/22px Monaco,Monospace !important;
+		  color:#333;
+		  background-color:#f2f2f2;
+		  background-image:-webkit-repeating-linear-gradient(top, #e5e5e5 0px, #e5e5e5 22px, #f2f2f2 22px, #f2f2f2 44px);
+		  background-image:-moz-repeating-linear-gradient(top, #e5e5e5 0px, #e5e5e5 22px, #f2f2f2 22px, #f2f2f2 44px);
+		  background-image:-ms-repeating-linear-gradient(top, #e5e5e5 0px, #e5e5e5 22px, #f2f2f2 22px, #f2f2f2 44px);
+		  background-image:-o-repeating-linear-gradient(top, #e5e5e5 0px, #e5e5e5 22px, #f2f2f2 22px, #f2f2f2 44px);
+		  background-image:repeating-linear-gradient(top, #e5e5e5 0px, #e5e5e5 22px, #f2f2f2 22px, #f2f2f2 44px);
+		  padding:0em 1em;
+		  overflow:auto;
+		  border:solid 1px #ccc;
+		}
+		
+		pre strong{color:#3A66FF;}
+    </style>
+</head>
+
+
+<body>
+<div class="container">
+	
+		<h3 class="center alt">Documentation by &ldquo;SatriaThemes&quot;</h3>
+		
+		<hr>
+		
+		<h1 class="center filename">&ldquo;Blessing&rdquo;</h1>
+		
+		<div class="borderTop">
+			<div class="span-6 colborder info prepend-1">
+				<p class="prepend-top">
+					<strong>
+					Created: 7 June, 2017<br>
+					By: SatriaThemes<br>
+                    <br>
+                    <br>
+					</strong>
+			  </p>
+</div><!-- end div .span-6 -->		
+	
+			<div class="span-12 last">
+				<p class="prepend-top append-0">Thank you for purchasing our theme. If you have any questions that are beyond the scope of this help file, please feel free to ask us on comments area<a href="http://themeforest.net/user/SatriaThemes"></a>. Thanks so much!</p>
+			</div>
+		</div><!-- end div .borderTop -->
+		
+		<hr>
+		
+	  <h2 id="toc" class="alt">Table of Contents</h2>
+      <p><a href="#A">HTML  Structure</a></p>
+      <p><a href="#B">CSS Files</a></p>
+      <p><a href="#C">Setting Contact Form</a></p>
+      <p><a href="#countdown">Setting Countdown Timer</a></p>
+      <p><a href="#javascript">JavaScript Files</a></p>
+<hr>
+		
+	  <h3 id="A">HTML structure - <a href="#toc">top</a></h3>
+		<p>This template build using Bootstrap framework version 3. All the information within main content is nested within a div with id-  name "<strong>content</strong>&quot;.  If you need  more information you can read Bootstrap documentation <a href="http://getbootstrap.com/">on this link</a></p>
+<p>&nbsp;</p>
+  <h5>1. Sample html structure for content</h5>
+    <pre>
+&lt;div id=&quot;<strong>content</strong>&quot;&gt;
+	&lt;div class=&quot;<strong>container</strong>&quot;&gt;
+		&lt;div class=&quot;<strong>row</strong>&quot;&gt;
+			&lt;div class=&quot;<strong>col-md-4</strong>&quot;&gt;
+				this is your content			
+			&lt;/div&gt;
+			&lt;div class=&quot;<strong>col-md-8</strong>&quot;&gt;<strong>
+				</strong>this is your content
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+<p>&nbsp;
+<h5>2. You can create column from 12 predefined grid size, then insert your content inside.</h5>
+<pre>
+&lt;div class=&quot;row&quot;&gt;<br>  	&lt;div class=&quot;<strong>col-md-1</strong>&quot;&gt;your content&lt;/div&gt;<br>	&lt;div class=&quot;<strong>col-md-2</strong>&quot;&gt;your content&lt;/div&gt;<br>	&lt;div class=&quot;<strong>col-md-3</strong>&quot;&gt;your content&lt;/div&gt;<br>	&lt;div class=&quot;<strong>col-md-4</strong>&quot;&gt;your content&lt;/div&gt;
+	&lt;div class=&quot;<strong>col-md-5</strong>&quot;&gt;your content&lt;/div&gt;<br>	&lt;div class=&quot;<strong>col-md-6</strong>&quot;&gt;your content&lt;/div&gt;
+	&lt;div class=&quot;<strong>col-md-7</strong>&quot;&gt;your content&lt;/div&gt;<br>	&lt;div class=&quot;<strong>col-md-8</strong>&quot;&gt;your content&lt;/div&gt;
+	&lt;div class=&quot;<strong>col-md-9</strong>&quot;&gt;your content&lt;/div&gt;<br>	&lt;div class=&quot;<strong>col-md-10</strong>&quot;&gt;your content&lt;/div&gt;
+	&lt;div class=&quot;<strong>col-md-11</strong>&quot;&gt;your content&lt;/div&gt;
+	&lt;div class=&quot;<strong>col-md-12</strong>&quot;&gt;your content&lt;/div&gt;<br>&lt;/div&gt;</pre>
+<hr/>
+<h3 id="B">CSS Files - <a href="#toc">top</a></h3>
+
+		<span id="result_box" lang="en">These are css files used in this template:</span>
+		<ol>
+          <li><strong>style.css</strong> - main css files (you can edit color, font, etc from this css)</li>
+          <li><strong>bootstrap.css - </strong>css framwork for this template</li>
+          <li><strong>prettyPhoto.css</strong> - used for image popup</li>
+          <li><strong>owl.carousel.css</strong> - used for carousel</li>
+          <li><strong>supersized.css</strong> - used for background slider</li>
+          <li><strong>main.css</strong> - used for load all  css files</li>
+        </ol>
+<p><span id="result_box2" lang="en">You can change almost all styles from <strong>style.css file</strong>. </span></p>
+<hr>
+<h3 id="C">Setting Contact Page- <a href="#toc">top</a></h3>
+  <p>Open &gt; <strong>Send.php</strong>. Change<strong> $email_to</strong> value with your email..</p>
+<p><img src="assets/send-php.jpg"></p>
+<hr>
+<h3 id="countdown">Setting Countdown Timer - <a href="#toc">top</a></h3>
+<ul>
+  <li>Open file js/countdown-custom.js</li>
+  <li>Look code below
+  
+  <pre>$('#defaultCountdown').countdown({until: new Date(2017, 4-1, 10, 8)}); // year, month, date, hour</pre>
+  </li>
+  <li>Change Date value above with any date. The format is year, month, date, hour.</li>
+</ul>
+<hr>
+		
+<h3 id="javascript">Javascript Files - <a href="#toc">top</a></h3>
+<ul>
+  <li><strong>jquery.min.js</strong> - http://docs.jquery.com/Downloading_jQuery</li>
+  <li><strong>owl.carousel.js</strong> - used for create carousel<br>
+    <strong>Url</strong>: http://owlgraphic.com/</li>
+  <li><strong>jquery.isotope.min.js</strong> - used in gallery page<br>
+    <strong>Url</strong>: http://isotope.metafizzy.co/</li>
+  <li><strong>jquery.prettyPhoto.js</strong> - used for open popup image<br>
+    <strong>Url</strong>:  http://www.no-margin-for-errors.com/projects/prettyphoto-jquery-lightbox-clone/</li>
+  <li><strong>easing.js</strong> - http://archive.plugins.jquery.com/project/Easing</li>
+  <li><strong>jquery.ui.totop.js</strong> - used for scroll to top<br>
+    <strong>Url</strong>: http://www.mattvarone.com/web-design/uitotop-jquery-plugin/</li>
+</ul>
+
+<hr>
+
+<h3 id="E">&nbsp;</h3>
+<p>Once again, thank you so much for purchasing this theme. As I said at the beginning, I'd be glad to help you if you have any questions relating to this theme. No guarantees, but I'll do my best to assist. If you have a more general question relating to the themes on ThemeForest, you might consider visiting the forums and asking your question in the "Item Discussion" section.</p> 
+		
+  <p class="append-bottom alt large"><strong>SatriaThemes</strong></p>
+		<p><a href="#toc">Go To Table of Contents</a></p>
+		
+		<hr class="space">
+</div><!-- end div .container -->
+</body>
+</html>
