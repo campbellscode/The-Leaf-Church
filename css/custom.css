@@ -1,0 +1,90 @@
+/* #region Menu */
+/* Mobile: make the right column a full-height flex panel */
+@media (max-width: 991px){
+  /* adjust 80px to your header height so the panel fills the rest of the screen */
+  .col-md-9{
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 80px);
+  }
+
+  /* menu takes available space and can scroll if long */
+  #mainmenu-container{
+    flex: 1 1 auto;
+    overflow-y: auto;
+  }
+
+  /* icons sit at the bottom and are centered */
+  .social{
+    margin-top: auto;                 /* pushes to bottom */
+    display: flex !important;
+    justify-content: center;
+    gap: 16px;
+    /* padding: 16px 0 24px; */
+    text-align: center;
+    float: none !important;           /* override any desktop floats */
+  }
+
+  .social a{ font-size: 22px; line-height: 1; }
+}
+
+/* #endregion /Menu */
+
+/* #region Home */
+.tp-caption.caption-wrapper {
+	background: rgba(0, 0, 0, .65) !important;
+	border-radius: 14px !important;
+	padding: 28px 32px !important;
+	/* more breathing room */
+	display: inline-block !important;
+	white-space: normal !important;
+	box-sizing: border-box;
+	text-align: center !important;
+	line-height: 1.35 !important;
+	/* fix cramped lines */
+}
+
+.caption-line1 {
+	font-size: 18px;
+	letter-spacing: .18em;
+	/* less spacing for readability */
+	margin-bottom: 12px;
+	/* space after first line */
+	opacity: .9;
+}
+
+.caption-line2 {
+	font-size: 56px;
+	font-weight: 900;
+	margin-bottom: 18px;
+	/* more gap before subtext */
+	line-height: 1.1;
+}
+
+.caption-line3 {
+	font-size: 18px;
+	margin-bottom: 22px;
+	/* space before button */
+	line-height: 1.45;
+	/* readable paragraph spacing */
+}
+
+.caption-btn .btn,
+.caption-wrapper a.btn {
+	padding: 12px 26px !important;
+	font-size: 16px !important;
+	margin-top: 6px;
+	border-width: 2px !important;
+}
+
+/* optional: don't let the vertical bar collide on mobile later */
+.tp-caption.border-v {
+	/* width:4px !important; height:230px !important; */
+	/* background:#58ba01 !important; border-radius:2px; */
+	background: #f0f0f0 !important;
+	border-radius: 2px;
+}
+/* #endregion /Home */
+
+
+
