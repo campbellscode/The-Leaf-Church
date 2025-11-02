@@ -1443,7 +1443,7 @@ header.clone #mainmenu a {
 	margin-top: 22px;
 	width: 36px;
 	height: 36px;
-	background: #58ba01;
+	background: #303030;
 	padding: 6px;
 	text-align: center;
 	cursor: pointer;
@@ -1459,8 +1459,8 @@ header.clone #mainmenu a {
 	color: #fff
 }
 
-#menu-btn:hover {
-	background: #303030;
+#menu-btn:hover { 
+	background:#58ba01; 
 }
 
 /*------------------------------ 
