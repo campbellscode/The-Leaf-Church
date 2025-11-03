@@ -99,6 +99,10 @@
     display: none;
 }
 
+.address-mobile {
+    display: none;
+}
+
 /* Mobile: show clickable link */
 @media (max-width: 768px) {
     .phone-desktop {
@@ -106,6 +110,14 @@
     }
 
     .phone-mobile {
+        display: inline;
+    }
+
+    .address-desktop {
+        display: none;
+    }
+
+    .address-mobile {
         display: inline;
     }
 }
