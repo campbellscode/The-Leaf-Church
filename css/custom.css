@@ -6,7 +6,26 @@
     }
 }
 
+/* phones + tablets: stack the menu items so the <ul> computes full height */
+@media (max-width: 991px) {
+    #mainmenu {
+        display: block;
+    }
 
+    #mainmenu>li {
+        float: none !important;
+        /* kill desktop float */
+        display: block;
+        width: 100%;
+    }
+
+    /* ensure floats can't collapse height if any remain */
+    #mainmenu::after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+}
 /* #endregion /Menu */
 
 /* #region Home */

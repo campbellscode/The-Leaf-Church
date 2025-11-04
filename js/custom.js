@@ -6,38 +6,64 @@
   // -----------------------------------------------------------------------------------------------------------------------
   // CUSTOM
   // -----------------------------------------------------------------------------------------------------------------------
-  
-  // start function mobile navigation
-  mobile_nav = function () {
-    var mb;
-    jQuery("#menu-btn").on("click", function () {
-      var iteration = $(this).data("iteration") || 1;
-      switch (iteration) {
-        case 1:
-          mb = 1;
-          var h = jQuery("#mainmenu").css("height");
-          jQuery("header").stop().animate(
-            {
-              // height: h,
-              height: "465px",
-            },
-            400
-          );
-          break;
 
-        case 2:
-          jQuery("header").stop().animate(
-            {
-              height: "80px",
-            },
-            400
-          );
-          mb = 0;
-          break;
+  // start function mobile navigation
+  function naturalHeight($el) {
+    const el = $el[0];
+    // remember current inline styles
+    const prev = {
+      position: $el.css("position"),
+      visibility: $el.css("visibility"),
+      display: $el.css("display"),
+      height: $el.css("height"),
+    };
+    // make it measurable without flashing
+    $el.css({
+      position: "absolute",
+      visibility: "hidden",
+      display: "block",
+      height: "auto",
+    });
+    const h = el.scrollHeight; // full content height including wrapped lines
+    // restore styles
+    $el.css(prev);
+    return h;
+  }
+
+  mobile_nav = function () {
+    const CLOSED = 80; // your closed header height
+    const $header = jQuery("header").css({
+      height: CLOSED,
+      overflow: "hidden",
+    });
+    const $panel = jQuery("#mainmenu-container");
+
+    jQuery("#menu-btn")
+      .off("click.mobile")
+      .on("click.mobile", function () {
+        const isOpen = $header.hasClass("open");
+
+        if (isOpen) {
+          $header
+            .removeClass("open")
+            .stop(true, true)
+            .animate({ height: CLOSED }, 300);
+        } else {
+          // IMPORTANT: measure container (not just <ul>) after mobile CSS has taken effect
+          const openH = CLOSED + naturalHeight($panel);
+          $header
+            .addClass("open")
+            .stop(true, true)
+            .animate({ height: openH }, 300);
+        }
+      });
+
+    // reset when back to desktop
+    jQuery(window).on("resize", function () {
+      if (window.matchMedia("(min-width: 992px)").matches) {
+        $header.removeClass("open").css({ height: "", overflow: "" });
+        $panel.css({ display: "" });
       }
-      iteration++;
-      if (iteration > 2) iteration = 1;
-      $(this).data("iteration", iteration);
     });
   };
   // close function mobile navigation
