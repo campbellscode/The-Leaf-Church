@@ -18,7 +18,8 @@
           var h = jQuery("#mainmenu").css("height");
           jQuery("header").stop().animate(
             {
-              height: h,
+              // height: h,
+              height: "465px",
             },
             400
           );
