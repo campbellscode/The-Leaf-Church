@@ -1,3 +1,6 @@
+/* Fallback: if JS fails entirely, don't trap the page behind the preloader */
+#preloader { display: none; }
+
 /* #region Menu */
 /* ===== Desktop (keep icons aligned to the far right of the nav bar) ===== */
 @media (max-width: 991px) {
@@ -26,6 +29,7 @@
         clear: both;
     }
 }
+
 /* #endregion /Menu */
 
 /* #region Home */
@@ -84,6 +88,276 @@
 }
 
 /* #endregion /Home */
+
+/* #region Home - Latest Sermons */
+
+/* ---------- Layout ---------- */
+.sermons {
+    padding: 24px 0 40px;
+}
+
+.sermons__head {
+    text-align: center;
+    margin-bottom: 18px;
+}
+
+.sermons__head h2 {
+    margin: 0;
+    font-weight: 600;
+}
+
+.sermons__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 18px;
+    align-items: stretch;
+}
+
+/* ---------- Card ---------- */
+.sermon-card {
+    background: #fff;
+    border: 1px solid #e9e9e9;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.sermon-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .08);
+}
+
+.sermon-card__thumb {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: #000;
+}
+
+.sermon-card__thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: brightness(.92);
+    transition: filter .18s ease, transform .18s ease;
+}
+
+.sermon-card:hover .sermon-card__thumb img {
+    filter: brightness(1);
+    transform: scale(1.02);
+}
+
+.sermon-card__play {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    pointer-events: none;
+}
+
+.sermon-card__play svg {
+    width: 64px;
+    height: 64px;
+    opacity: .9;
+    transition: transform .18s ease, opacity .18s ease;
+    filter: drop-shadow(0 6px 10px rgba(0, 0, 0, .25));
+}
+
+.sermon-card:hover .sermon-card__play svg {
+    transform: scale(1.06);
+    opacity: 1;
+}
+
+.sermon-card__body {
+    padding: 14px 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.sermon-card__title {
+    margin: 0;
+    font-size: 2.05rem;
+    line-height: 1.25;
+}
+
+.sermon-card__meta {
+    color: #7a7a7a;
+    font-size: 1.2rem;
+}
+
+.sermon-card__actions {
+    margin-top: 8px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.btn,
+.btn--ghost {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 36px;
+    padding: 0 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    border: 0;
+}
+
+.btn {
+    background: #cc0000;
+    color: #fff;
+}
+
+.btn:hover {
+    background: #a50000;
+    color: #fff;
+}
+
+.btn--ghost {
+    background: #f3f3f3;
+    color: #333;
+}
+
+.btn--ghost:hover {
+    background: #e8e8e8;
+}
+
+/* ---------- Modal ---------- */
+.sermons__modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .6);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 22px;
+    z-index: 9999;
+}
+
+.sermons__modal.is-open {
+    display: flex;
+}
+
+.sermons__dialog {
+    width: min(960px, 100%);
+    background: #000;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.sermons__close {
+    position: absolute;
+    top: 6px;
+    right: 10px;
+    font-size: 36px;
+    line-height: 1;
+    background: transparent;
+    color: #fff;
+    border: 0;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.sermons__player {
+    width: 100%;
+    aspect-ratio: 16/9;
+}
+
+.sermons__player iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+}
+
+/* ---------- Responsive tweaks ---------- */
+@media (max-width: 640px) {
+    .sermon-card__play svg {
+        width: 56px;
+        height: 56px;
+    }
+}
+
+/* #endregion /Home - Latest Sermons */
+
+/* #region Sermons */
+.video-container{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;max-width:100%}
+.video-container iframe{position:absolute;inset:0;width:100%;height:100%}
+
+.fluid-width-video-wrapper {
+    padding-top: 0% !important;
+}
+
+.sub-wrap {
+    display: flex;
+    justify-content: center;
+    /* center the buttons */
+    align-items: center;
+    /* ✅ vertical alignment */
+    gap: 10px;
+    /* spacing between buttons */
+}
+
+.btn-sub-now {
+    width: 130px;
+    /* slightly wider looks better next to YouTube */
+    display: inline-block;
+    background: #cc0000;
+    color: #fff !important;
+    font-weight: 600;
+    border-radius: 4px;
+    text-decoration: none;
+    text-align: center;
+    line-height: 28px;
+    /* keep button height */
+    transition: background 0.25s ease;
+}
+
+.g-ytsubscribe {
+    vertical-align: middle;
+    /* ✅ line up */
+}
+
+.btn-sub-now:hover {
+    background: #a50000;
+    color: #fff !important;
+}
+
+.btn-yt-icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    /* same visual height as your other buttons */
+    height: 28px;
+    background: #cc0000;
+    color: #fff !important;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background 0.25s ease;
+    vertical-align: middle;
+    /* aligns with your other buttons */
+}
+
+.btn-yt-icon:hover {
+    background: #a50000;
+}
+
+.btn-yt-icon .fa-youtube-play {
+    font-size: 18px;
+}
+
+/* #endregion /Sermons */
 
 /* #region Contact */
 /* /* Desktop: show text only */

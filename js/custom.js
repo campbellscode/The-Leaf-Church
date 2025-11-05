@@ -68,6 +68,79 @@
   };
   // close function mobile navigation
 
+  // Latest sermons
+  // --- Your latest videos: add/remove items here ---
+  const SERMONS = [
+    { id: "c6fNGfpRb-k", title: "Marred Pride", date: "November 3rd, 2025" },
+    {
+      id: "O7MsDvTX7i4",
+      title: "Hand Clave Unto The Sword",
+      date: "November 3rd, 2025",
+    },
+    {
+      id: "L6T-pIhAZyk",
+      title: "Wasted Money? Or Not?",
+      date: "October 31st, 2025",
+    },
+  ];
+
+  // Render cards
+  const grid = document.getElementById("sermonsGrid");
+  SERMONS.forEach((v) => {
+    const card = document.createElement("article");
+    card.className = "sermon-card";
+    card.innerHTML = `
+      <button class="sermon-card__thumb" data-play="${v.id}" aria-label="Play ${v.title}">
+        <img alt="${v.title}" loading="lazy"
+             src="https://img.youtube.com/vi/${v.id}/hqdefault.jpg">
+        <span class="sermon-card__play" aria-hidden="true">
+          <svg viewBox="0 0 68 48" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#FF0000" d="M66.52 7.02a8 8 0 0 0-5.64-5.66C56.36 0 34 0 34 0S11.64 0 7.12 1.36a8 8 0 0 0-5.64 5.66A83 83 0 0 0 0 24a83 83 0 0 0 1.48 16.98 8 8 0 0 0 5.64 5.66C11.64 48 34 48 34 48s22.36 0 26.88-1.36a8 8 0 0 0 5.64-5.66A83 83 0 0 0 68 24a83 83 0 0 0-1.48-16.98z"/>
+            <path fill="#FFF" d="M45 24 27 14v20z"/>
+          </svg>
+        </span>
+      </button>
+      <div class="sermon-card__body">
+        <h3 class="sermon-card__title">${v.title}</h3>
+        <div class="sermon-card__meta">${v.date}</div>
+        <div class="sermon-card__actions">
+          <a class="btn" data-play="${v.id}" href="https://www.youtube.com/watch?v=${v.id}" target="_blank" rel="noopener">Watch</a>
+          <a class="btn--ghost" href="https://www.youtube.com/watch?v=${v.id}" target="_blank" rel="noopener">Open on YouTube</a>
+        </div>
+      </div>
+    `;
+    grid.appendChild(card);
+  });
+
+  // Modal player logic
+  const modal = document.getElementById("sermonModal");
+  const iframe = document.getElementById("sermonPlayer");
+  const closeBtn = modal.querySelector(".sermons__close");
+
+  function openVideo(id) {
+    iframe.src = `https://www.youtube.com/embed/${id}?autoplay=1&rel=0&modestbranding=1`;
+    modal.classList.add("is-open");
+    modal.setAttribute("aria-hidden", "false");
+  }
+  function closeVideo() {
+    iframe.src = "about:blank"; // stop playback
+    modal.classList.remove("is-open");
+    modal.setAttribute("aria-hidden", "true");
+  }
+
+  document.addEventListener("click", (e) => {
+    const t = e.target.closest("[data-play]");
+    if (t) {
+      e.preventDefault();
+      openVideo(t.getAttribute("data-play"));
+    }
+    if (e.target === modal) closeVideo(); // click backdrop
+  });
+  closeBtn.addEventListener("click", closeVideo);
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && modal.classList.contains("is-open")) closeVideo();
+  });
+
   // start function init
   init = function () {
     // - - - - - - - - - -

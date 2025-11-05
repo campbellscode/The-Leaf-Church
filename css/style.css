@@ -221,11 +221,13 @@ header .animated {
 	font-weight: 400;
 	font-size: 32px;
 	text-align: center;
-	margin-bottom: 20px;
+	/* margin-bottom: 20px; */
 	overflow: hidden;
 	text-align: center;
-	border-top: solid 1px rgba(255, 255, 255, .1);
-	border-bottom: solid 1px rgba(255, 255, 255, .1);
+	/* border-top: solid 1px rgba(255, 255, 255, .1);
+	border-bottom: solid 1px rgba(255, 255, 255, .1); */
+	border-top: 1px solid #58ba01;
+	border-bottom: 1px solid #58ba01;
 	display: block;
 	padding: 10px;
 }
@@ -631,7 +633,8 @@ footer a:hover {
 }
 
 .custom-col-3 .left-col {
-	width: 180px;
+	/* width: 180px; */
+	width: 560px;
 }
 
 .custom-col-3 img {
@@ -1599,7 +1602,7 @@ blockquote:before {
 }
 
 blockquote p {
-	display inline;
+	display: inline;
 }
 
 blockquote span {
@@ -2719,7 +2722,7 @@ control nav
 	margin: 0 6px;
 	display: inline-block;
 	zoom: 1;
-	*display: inline;
+	display: inline;
 }
 
 .flex-control-paging li a {
