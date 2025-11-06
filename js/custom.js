@@ -33,6 +33,7 @@
   // Latest sermons
   // --- Your latest videos: add/remove items here ---
   const SERMONS = [
+    { id: "gz19QsLYPqg", title: "The Voice In Prison", date: "November 5th, 2025" },
     { id: "c6fNGfpRb-k", title: "Marred Pride", date: "November 3rd, 2025" },
     {
       id: "O7MsDvTX7i4",
