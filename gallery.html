@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <title>The Leaf Church</title>
@@ -9,99 +10,158 @@
 
     <!-- LOAD CSS FILES -->
     <link href="css/main.css" rel="stylesheet" type="text/css">
+    <link href="css/custom.css" rel="stylesheet" type="text/css">
 
-        <!-- CDNs -->
+    <!-- CDNs -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet">
+
+    <style>
+        /* Use masonry on the gallery page */
+        #gallery-isotope.masonry {
+            display: block !important;
+            /* cancel any earlier flex override   */
+            column-width: 240px;
+            /* base tile width                    */
+            column-gap: 16px;
+            /* space between columns              */
+            margin: 0 auto;
+        }
+
+        /* Tiles */
+        #gallery-isotope.masonry .item {
+            display: inline-block;
+            /* required for CSS columns           */
+            width: 100%;
+            margin: 0 0 16px;
+            break-inside: avoid-column;
+            /* prevent items from being split     */
+            -webkit-column-break-inside: avoid;
+            -moz-column-break-inside: avoid;
+        }
+
+        /* Images */
+        #gallery-isotope.masonry .item img {
+            display: block;
+            width: 100%;
+            height: auto;
+            /* no cropping, no black bars         */
+            border-radius: 8px;
+        }
+
+        /* Responsive column widths to match home page look */
+        @media (max-width: 1200px) {
+            #gallery-isotope.masonry {
+                column-width: 220px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            #gallery-isotope.masonry {
+                column-width: 200px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            #gallery-isotope.masonry {
+                column-width: 170px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            #gallery-isotope.masonry {
+                column-width: 140px;
+            }
+        }
+    </style>
 </head>
 
 <body>
-	<div id="preloader"></div>
+    <div id="preloader"></div>
     <div id="wrapper">
         <!-- header begin -->
-            <nav class="navbar navbar-expand-lg bg-white fixed-top shadow-sm border-0">
-                <div class="container">
-                    <!-- Brand -->
-                    <a class="navbar-brand d-flex align-items-center" href="index.html">
-                        <img src="img/logo/logo-new-2.png" alt="The Leaf Church" style="height:40px" class="me-2">
-                    </a>
+        <nav class="navbar navbar-expand-lg bg-white fixed-top shadow-sm border-0">
+            <div class="container">
+                <!-- Brand -->
+                <a class="navbar-brand d-flex align-items-center" href="index.html">
+                    <img src="img/logo/logo-new-2.png" alt="The Leaf Church" style="height:40px" class="me-2">
+                </a>
 
-                    <!-- Desktop links -->
-                    <div class="collapse navbar-collapse d-none d-lg-flex">
-                        <ul class="navbar-nav ms-auto align-items-center gap-2">
-                            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
-                            <li class="nav-item"><a class="nav-link" href="sermons.html">Sermons</a></li>
-                            <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
-                            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#">Donate</a></li>
-                            <li class="nav-item ms-2">
-                                <div class="d-flex align-items-center gap-3 fs-5">
-                                    <a href="https://www.facebook.com/profile.php?id=61556350205048" target="_blank"><i
-                                            class="fa fa-facebook"></i></a>
-                                    <a href="https://www.instagram.com/theleafchurchcincy" target="_blank"><i
-                                            class="fa fa-instagram"></i></a>
-                                    <a href="https://www.youtube.com/@theleafchurchcincy" target="_blank"><i
-                                            class="fa fa-youtube-play"></i></a>
-                                    <a href="https://share.google/AYmQxvqO5LvwswVBR" target="_blank"><i
-                                            class="fa fa-google"></i></a>
-                                    <a href="mailto:theleafchurch@gmail.com" target="_blank"><i
-                                            class="fa fa-envelope-o"></i></a>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- Mobile toggler -->
-                    <button class="navbar-toggler border-0 d-lg-none" type="button" data-bs-toggle="offcanvas"
-                        data-bs-target="#mobileNav" aria-controls="mobileNav" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                </div>
-            </nav>
-
-            <!-- Spacer under fixed nav -->
-            <!-- <div style="height:74px"></div> -->
-
-            <!-- Offcanvas mobile menu -->
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="mobileNav" aria-labelledby="mobileNavLabel"
-                data-bs-scroll="true" data-bs-backdrop="true">
-                <div class="offcanvas-header border-bottom">
-                    <h5 class="offcanvas-title" id="mobileNavLabel">Menu</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-
-                <div class="offcanvas-body d-flex flex-column">
-                    <ul class="navbar-nav fs-5">
-                        <li class="nav-item"><a class="nav-link py-2" href="index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link py-2" href="events.html">Events</a></li>
-                        <li class="nav-item"><a class="nav-link py-2" href="sermons.html">Sermons</a></li>
-                        <li class="nav-item"><a class="nav-link py-2" href="gallery.html">Gallery</a></li>
-                        <li class="nav-item"><a class="nav-link py-2" href="contact.html">Contact</a></li>
+                <!-- Desktop links -->
+                <div class="collapse navbar-collapse d-none d-lg-flex">
+                    <ul class="navbar-nav ms-auto align-items-center gap-2">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+                        <li class="nav-item"><a class="nav-link" href="sermons.html">Sermons</a></li>
+                        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Donate</a></li>
+                        <li class="nav-item ms-2">
+                            <div class="d-flex align-items-center gap-3 fs-5">
+                                <a href="https://www.facebook.com/profile.php?id=61556350205048" target="_blank"><i
+                                        class="fa fa-facebook"></i></a>
+                                <a href="https://www.instagram.com/theleafchurchcincy" target="_blank"><i
+                                        class="fa fa-instagram"></i></a>
+                                <a href="https://www.youtube.com/@theleafchurchcincy" target="_blank"><i
+                                        class="fa fa-youtube-play"></i></a>
+                                <a href="https://share.google/AYmQxvqO5LvwswVBR" target="_blank"><i
+                                        class="fa fa-google"></i></a>
+                                <a href="mailto:theleafchurch@gmail.com" target="_blank"><i
+                                        class="fa fa-envelope-o"></i></a>
+                            </div>
+                        </li>
                     </ul>
+                </div>
 
-                    <!-- social bottom -->
-                    <hr style="height:0;" class="my-4 p-0" />
-                    <a style="width:50px;" class="btn btn-success w-100 rounded-pill text-white my-4"
-                        href="#">Donate</a>
-                    <hr style="height:0;" class="mt-4 mb-5 p-0" />
-                    <div class="mt-auto text-center">
+                <!-- Mobile toggler -->
+                <button class="navbar-toggler border-0 d-lg-none" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#mobileNav" aria-controls="mobileNav" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </nav>
 
-                        <div class="d-flex justify-content-center gap-4 fs-4">
-                            <a href="https://www.facebook.com/profile.php?id=61556350205048" target="_blank"><i
-                                    class="fa fa-facebook"></i></a>
-                            <a href="https://www.instagram.com/theleafchurchcincy" target="_blank"><i
-                                    class="fa fa-instagram"></i></a>
-                            <a href="https://www.youtube.com/@theleafchurchcincy" target="_blank"><i
-                                    class="fa fa-youtube-play"></i></a>
-                            <a href="https://share.google/AYmQxvqO5LvwswVBR" target="_blank"><i
-                                    class="fa fa-google"></i></a>
-                            <a href="mailto:theleafchurch@gmail.com" target="_blank"><i
-                                    class="fa fa-envelope-o"></i></a>
-                        </div>
+        <!-- Spacer under fixed nav -->
+        <!-- <div style="height:74px"></div> -->
+
+        <!-- Offcanvas mobile menu -->
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="mobileNav" aria-labelledby="mobileNavLabel"
+            data-bs-scroll="true" data-bs-backdrop="true">
+            <div class="offcanvas-header border-bottom">
+                <h5 class="offcanvas-title" id="mobileNavLabel">Menu</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+
+            <div class="offcanvas-body d-flex flex-column">
+                <ul class="navbar-nav fs-5">
+                    <li class="nav-item"><a class="nav-link py-2" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link py-2" href="events.html">Events</a></li>
+                    <li class="nav-item"><a class="nav-link py-2" href="sermons.html">Sermons</a></li>
+                    <li class="nav-item"><a class="nav-link py-2" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link py-2" href="contact.html">Contact</a></li>
+                </ul>
+
+                <!-- social bottom -->
+                <hr style="height:0;" class="my-4 p-0" />
+                <a style="width:50px;" class="btn btn-success w-100 rounded-pill text-white my-4" href="#">Donate</a>
+                <hr style="height:0;" class="mt-4 mb-5 p-0" />
+                <div class="mt-auto text-center">
+
+                    <div class="d-flex justify-content-center gap-4 fs-4">
+                        <a href="https://www.facebook.com/profile.php?id=61556350205048" target="_blank"><i
+                                class="fa fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/theleafchurchcincy" target="_blank"><i
+                                class="fa fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/@theleafchurchcincy" target="_blank"><i
+                                class="fa fa-youtube-play"></i></a>
+                        <a href="https://share.google/AYmQxvqO5LvwswVBR" target="_blank"><i
+                                class="fa fa-google"></i></a>
+                        <a href="mailto:theleafchurch@gmail.com" target="_blank"><i class="fa fa-envelope-o"></i></a>
                     </div>
                 </div>
             </div>
+        </div>
         <!-- header close -->
 
         <!-- subheader begin -->
@@ -122,105 +182,121 @@
         <!-- content begin -->
         <div id="content">
             <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <ul id="filters">
-                            <li><a href="#" data-filter="*" class="selected">show all</a></li>
-                            <li><a href="#" data-filter=".event">event</a></li>
-                            <li><a href="#" data-filter=".news">news</a></li>
-                            <li><a href="#" data-filter=".gallery">gallery</a></li>
-                        </ul>
-
+                <!-- <div class="row">
+                    <div class="col-md-8 col-md-offset-2 text-center">
+                        <h2>From Gallery</h2>
+                        <div class="divider-double"></div>
                     </div>
-                </div>
-                <div class="row">
-                    <div id="gallery-isotope" class="zoom-gallery col-md-12">
-                        <div class="item long-pic event">
-                            <a class="image-popup-gallery" href="img/gallery/pic%20(1).jpg"><span class="overlay"></span>
-                            <img src="img/gallery/pic%20(1).jpg" alt="">
-							</a>
-                        </div>
+                </div> -->
+                <div id="gallery-isotope" class="wow fadeInUp masonry" data-wow-delay=".25s">
+                    <div class="item">
+                        <a href="img/gallery/pic-1.jpg" data-lightbox="church-gallery" data-title="">
+                            <img src="img/gallery/pic-1.jpg" alt="" />
+                            <span class="overlay"></span>
+                        </a>
+                    </div>
 
-                        <div class="item wide-pic news">
-                            <a href="img/gallery/pic%20(3).jpg"><span class="overlay"></span></a>
-                            <img src="img/gallery/pic%20(3).jpg" alt="">
-                        </div>
+                    <div class="item">
+                        <a href="img/gallery/pic-2.jpg" data-lightbox="church-gallery" data-title="">
+                            <img src="img/gallery/pic-2.jpg" alt="" />
+                            <span class="overlay"></span>
+                        </a>
+                    </div>
 
-                        <div class="item small-pic gallery">
-                            <a href="img/gallery/pic%20(2).jpg"><span class="overlay"></span></a>
-                            <img src="img/gallery/pic%20(2).jpg" alt="">
-                        </div>
-                        <div class="item small-pic event">
-                            <a href="img/gallery/pic%20(5).jpg"><span class="overlay"></span></a>
-                            <img src="img/gallery/pic%20(5).jpg" alt="">
-                        </div>
-                        <div class="item wide-pic news">
-                            <a href="img/gallery/pic%20(4).jpg"><span class="overlay"></span></a>
-                            <img src="img/gallery/pic%20(4).jpg" alt="">
-                        </div>
+                    <div class="item">
+                        <a href="img/gallery/pic-10.jpg" data-lightbox="church-gallery" data-title="">
+                            <img src="img/gallery/pic-10.jpg" alt="" />
+                            <span class="overlay"></span>
+                        </a>
+                    </div>
 
-                        <div class="item small-pic gallery">
-                            <a href="img/gallery/pic%20(2).jpg"><span class="overlay"></span></a>
-                            <img src="img/gallery/pic%20(2).jpg" alt="">
-                        </div>
-                        <div class="item wide-pic">
-                            <a href="img/gallery/pic%20(3).jpg event""><span class="overlay"></span></a>
-                            <img src="img/gallery/pic%20(3).jpg" alt="">
-                        </div>
+                    <div class="item">
+                        <a href="img/gallery/pic-11.jpg" data-lightbox="church-gallery" data-title="">
+                            <img src="img/gallery/pic-11.jpg" alt="" />
+                            <span class="overlay"></span>
+                        </a>
+                    </div>
 
+                    <div class="item">
+                        <a href="img/gallery/pic-13.jpg" data-lightbox="church-gallery" data-title="">
+                            <img src="img/gallery/pic-13.jpg" alt="" />
+                            <span class="overlay"></span>
+                        </a>
+                    </div>
 
-                        <div class="item long-pic news">
-                            <a href="img/gallery/pic%20(1).jpg"><span class="overlay"></span></a>
-                            <img src="img/gallery/pic%20(1).jpg" alt="">
-                        </div>
+                    <div class="item">
+                        <a href="img/gallery/pic-9.jpg" data-lightbox="church-gallery" data-title="">
+                            <img src="img/gallery/pic-9.jpg" alt="" />
+                            <span class="overlay"></span>
+                        </a>
+                    </div>
 
-                        <div class="item wide-pic gallery">
-                            <a href="img/gallery/pic%20(4).jpg"><span class="overlay"></span></a>
-                            <img src="img/gallery/pic%20(4).jpg" alt="">
-                        </div>
+                    <div class="item">
+                        <a href="img/gallery/pic-4.jpg" data-lightbox="church-gallery" data-title="">
+                            <img src="img/gallery/pic-4.jpg" alt="" />
+                            <span class="overlay"></span>
+                        </a>
+                    </div>
 
-                        <div class="item small-pic event">
-                            <a href="img/gallery/pic%20(1).jpg"><span class="overlay"></span></a>
-                            <img src="img/gallery/pic%20(5).jpg" alt="">
-                        </div>
+                    <div class="item">
+                        <a href="img/gallery/pic-5.jpg" data-lightbox="church-gallery" data-title="">
+                            <img src="img/gallery/pic-5.jpg" alt="" />
+                            <span class="overlay"></span>
+                        </a>
+                    </div>
 
+                    <div class="item">
+                        <a href="img/gallery/pic-6.jpg" data-lightbox="church-gallery" data-title="">
+                            <img src="img/gallery/pic-6.jpg" alt="" />
+                            <span class="overlay"></span>
+                        </a>
+                    </div>
 
+                    <div class="item">
+                        <a href="img/gallery/pic-7.jpg" data-lightbox="church-gallery" data-title="">
+                            <img src="img/gallery/pic-7.jpg" alt="" />
+                            <span class="overlay"></span>
+                        </a>
+                    </div>
 
+                    <div class="item">
+                        <a href="img/gallery/pic-12.jpg" data-lightbox="church-gallery" data-title="">
+                            <img src="img/gallery/pic-12.jpg" alt="" />
+                            <span class="overlay"></span>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- content close -->
-        <!-- footer begin -->
-        <footer>
+    </div>
+    <!-- content close -->
+    <!-- footer begin -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    &copy; Copyright 2025 - The Leaf Church by
+                    <a href="https://campbellscode.com" target="_blank" rel="noopener noreferrer">
+                        Campbell's Code
+                    </a>
 
-
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        &copy; Copyright 2025 - The Leaf Church by 
-<a href="https://campbellscode.com" target="_blank" rel="noopener noreferrer">
-    Campbell's Code
-</a>
-
-                    </div>
-                    <div class="col-md-6">
-                        <nav>
-                            <ul>
-                                <li><a href="index.html">Home</a></li>
-                                <li><a href="events.html">Events</a></li>
-                                <li><a href="sermons.html">Sermons</a></li>
-                                <li><a href="gallery.html">Gallery</a></li>
-                                <li><a href="contact.html">Contact</a></li>
-                                <li><a href="donate.html">Donate</a></li>
-                            </ul>
-                        </nav>
-                    </div>
+                </div>
+                <div class="col-md-6">
+                    <nav>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="events.html">Events</a></li>
+                            <li><a href="sermons.html">Sermons</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="donate.html">Donate</a></li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
-
-        </footer>
-        <!-- footer close -->
+        </div>
+    </footer>
+    <!-- footer close -->
     </div>
 
     <!-- LOAD JS FILES -->
@@ -230,7 +306,6 @@
     <script src="js/jquery.prettyPhoto.js"></script>
     <script src="js/easing.js"></script>
     <script src="js/jquery.ui.totop.js"></script>
-    <!-- <script src="js/selectnav.js"></script> -->
     <script src="js/ender.js"></script>
     <script src="js/responsiveslides.min.js"></script>
     <script src="js/owl.carousel.js"></script>
@@ -238,9 +313,9 @@
     <script src="js/jquery.plugin.js"></script>
     <script src="js/jquery.countdown.js"></script>
     <script src="js/countdown-custom.js"></script>
-    <script src="js/wow.min.js"></script>	
-	<script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/wow.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
     <script src="js/custom.js"></script>
 
     <!-- SLIDER REVOLUTION SCRIPTS  -->
@@ -249,4 +324,5 @@
     <script src="js/rev-setting-1.js"></script>
 
 </body>
+
 </html>

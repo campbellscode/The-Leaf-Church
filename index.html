@@ -528,7 +528,6 @@
                 <div class="clearfix"></div>
             </section> -->
             <!-- section close -->
-
             <!-- section begin -->
             <section id="section-gallery">
                 <div class="container">
@@ -537,85 +536,85 @@
                             <h2>From Gallery</h2>
                             <div class="divider-double"></div>
                         </div>
+                    </div>
 
-                        <div id="gallery-isotope" class="col-md-12 wow fadeInUp" data-wow-delay=".25s">
+                    <div id="gallery-isotope" class="wow fadeInUp " data-wow-delay=".25s">
 
-                            <div class="item">
-                                <a href="img/gallery/pic-1.jpg" data-lightbox="church-gallery" data-title="">
+                        <div class="item">
+                            <a href="img/gallery/pic-1.jpg" data-lightbox="church-gallery" data-title="">
                                 <img src="img/gallery/pic-1.jpg" alt="" />
                                 <span class="overlay"></span>
-                                </a>
-                            </div>
+                            </a>
+                        </div>
 
-                            <div class="item">
-                                <a href="img/gallery/pic-2.jpg" data-lightbox="church-gallery" data-title="">
+                        <div class="item">
+                            <a href="img/gallery/pic-2.jpg" data-lightbox="church-gallery" data-title="">
                                 <img src="img/gallery/pic-2.jpg" alt="" />
                                 <span class="overlay"></span>
-                                </a>
-                            </div>                            
-                            
-                            <div class="item">
-                                <a href="img/gallery/pic-10.jpg" data-lightbox="church-gallery" data-title="">
+                            </a>
+                        </div>
+
+                        <div class="item">
+                            <a href="img/gallery/pic-10.jpg" data-lightbox="church-gallery" data-title="">
                                 <img src="img/gallery/pic-10.jpg" alt="" />
                                 <span class="overlay"></span>
-                                </a>
-                            </div>      
+                            </a>
+                        </div>
 
-                            <div class="item">
-                                <a href="img/gallery/pic-11.jpg" data-lightbox="church-gallery" data-title="">
+                        <div class="item">
+                            <a href="img/gallery/pic-11.jpg" data-lightbox="church-gallery" data-title="">
                                 <img src="img/gallery/pic-11.jpg" alt="" />
                                 <span class="overlay"></span>
-                                </a>
-                            </div>            
-                            
-                            <div class="item">
-                                <a href="img/gallery/pic-13.jpg" data-lightbox="church-gallery" data-title="">
+                            </a>
+                        </div>
+
+                        <div class="item">
+                            <a href="img/gallery/pic-13.jpg" data-lightbox="church-gallery" data-title="">
                                 <img src="img/gallery/pic-13.jpg" alt="" />
                                 <span class="overlay"></span>
-                                </a>
-                            </div>    
+                            </a>
+                        </div>
 
-                            <div class="item">
-                                <a href="img/gallery/pic-9.jpg" data-lightbox="church-gallery" data-title="">
+                        <div class="item">
+                            <a href="img/gallery/pic-9.jpg" data-lightbox="church-gallery" data-title="">
                                 <img src="img/gallery/pic-9.jpg" alt="" />
                                 <span class="overlay"></span>
-                                </a>
-                            </div>   
+                            </a>
+                        </div>
 
-                            <div class="item">
-                                <a href="img/gallery/pic-4.jpg" data-lightbox="church-gallery" data-title="">
+                        <div class="item">
+                            <a href="img/gallery/pic-4.jpg" data-lightbox="church-gallery" data-title="">
                                 <img src="img/gallery/pic-4.jpg" alt="" />
                                 <span class="overlay"></span>
-                                </a>
-                            </div>   
+                            </a>
+                        </div>
 
-                            <div class="item">
-                                <a href="img/gallery/pic-5.jpg" data-lightbox="church-gallery" data-title="">
+                        <div class="item">
+                            <a href="img/gallery/pic-5.jpg" data-lightbox="church-gallery" data-title="">
                                 <img src="img/gallery/pic-5.jpg" alt="" />
                                 <span class="overlay"></span>
-                                </a>
-                            </div>   
+                            </a>
+                        </div>
 
-                            <div class="item">
-                                <a href="img/gallery/pic-6.jpg" data-lightbox="church-gallery" data-title="">
+                        <div class="item">
+                            <a href="img/gallery/pic-6.jpg" data-lightbox="church-gallery" data-title="">
                                 <img src="img/gallery/pic-6.jpg" alt="" />
                                 <span class="overlay"></span>
-                                </a>
-                            </div>   
+                            </a>
+                        </div>
 
-                            <div class="item">
-                                <a href="img/gallery/pic-7.jpg" data-lightbox="church-gallery" data-title="">
+                        <div class="item">
+                            <a href="img/gallery/pic-7.jpg" data-lightbox="church-gallery" data-title="">
                                 <img src="img/gallery/pic-7.jpg" alt="" />
                                 <span class="overlay"></span>
-                                </a>
-                            </div>   
+                            </a>
+                        </div>
 
-                            <div class="item">
-                                <a href="img/gallery/pic-12.jpg" data-lightbox="church-gallery" data-title="">
+                        <div class="item">
+                            <a href="img/gallery/pic-12.jpg" data-lightbox="church-gallery" data-title="">
                                 <img src="img/gallery/pic-12.jpg" alt="" />
                                 <span class="overlay"></span>
-                                </a>
-                            </div>   
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -713,6 +712,37 @@
     <script type="text/javascript" src="rs-plugin/js/jquery.themepunch.plugins.min.js"></script>
     <script type="text/javascript" src="rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
     <script src="js/rev-setting-1.js"></script>
+
+    <script>
+// init once
+var $grid = $('#gallery-isotope').isotope({
+  itemSelector: '.item',
+  layoutMode: 'masonry',
+  masonry: { gutter: 12, fitWidth: true },
+  percentPosition: true
+});
+
+// 1) after images are really loaded
+$grid.imagesLoaded(function(){ $grid.isotope('layout'); });
+
+// 2) after the whole page finishes (fonts, CSS, etc.)
+$(window).on('load', function(){ $grid.isotope('layout'); });
+
+// 3) after WOW/animate.css or any CSS animations finish
+document.addEventListener('animationend', function(e){
+  if (e.target.closest && e.target.closest('#section-gallery')) {
+    $grid.isotope('layout');
+  }
+}, true);
+
+// 4) in case a framework toggles visibility (tabs/carousels/modals)
+$(document).on('shown.bs.tab shown.bs.collapse slid.bs.carousel', function(){
+  $grid.isotope('layout');
+});
+
+// 5) final safety: re-layout once more shortly after first paint
+setTimeout(function(){ $grid.isotope('layout'); }, 350);
+</script>
 
 </body>
 
