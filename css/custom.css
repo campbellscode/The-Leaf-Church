@@ -240,11 +240,35 @@ body {
     background: #f0f0f0 !important;
     border-radius: 2px;
 }
-
 /* #endregion /Home */
 
-/* #region Home - Latest Sermons */
+/* #region Home - Upcoming Events */
+#page-events .overlay h3 {
+    font-size: 1.75rem !important;
+    color: black;
+    text-decoration: underline;
+    /* border-bottom: 1px solid black; */
+    /* border-color: #58ba01; */
+}
 
+#page-events .overlay span {
+    font-size: 1.4rem !important;
+}
+/* #endregion /Home - Upcoming Events */
+
+/* #region Home - About The Church */
+#section-text h3 {
+    padding-top: 6px;
+    font-size: 1.75rem !important;
+    color: black;
+}
+
+#section-text span {
+    font-size: 1.5rem !important;
+}
+/* #endregion /Home - About The Church */
+
+/* #region Home - Latest Sermons */
 /* ---------- Layout ---------- */
 .sermons {
     padding: 24px 0 40px;
@@ -345,44 +369,60 @@ body {
 }
 
 .sermon-card__actions {
-    margin-top: 8px;
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
+  margin-top: 8px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
 }
 
+/* Base button styles */
 .btn,
 .btn--ghost {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    height: 36px;
-    padding: 0 12px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 1rem;
-    cursor: pointer;
-    border: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+  padding: 0 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.2s ease;
 }
 
+/* Primary red button */
 .btn {
-    background: #cc0000;
-    color: #fff;
+  background: #cc0000;
+  color: #fff;
+  border-color: #cc0000;
 }
 
 .btn:hover {
-    background: #a50000;
-    color: #fff;
+  background: #fff;
+  color: #cc0000;
+  border-color: #cc0000;
 }
 
+/* Ghost/light gray button */
 .btn--ghost {
-    background: #f3f3f3;
-    color: #333;
+  background: #f3f3f3;
+  color: #333;
+  border: 2px solid transparent;
 }
 
 .btn--ghost:hover {
-    background: #e8e8e8;
+  background: #fff;
+  border-color: #cc0000;
+  color: #cc0000;
+}
+
+/* Alignment tweak for consistency */
+.btn,
+.btn--ghost {
+  line-height: 1;
+  vertical-align: middle;
 }
 
 /* ---------- Modal ---------- */
@@ -443,6 +483,18 @@ body {
 }
 
 /* #endregion /Home - Latest Sermons */
+
+/* #region Home - A Word From The Pastor */
+#section-text-2 p {
+    font-size: 2rem;
+}
+
+@media (max-width: 768px) {
+    #section-text-2 p {
+    font-size: 1.4rem;
+}
+}
+/* #endregion /Home - A Word From The Pastor */
 
 /* #region Sermons */
 .video-container {

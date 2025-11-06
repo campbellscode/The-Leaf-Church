@@ -66,7 +66,7 @@
         <h3 class="sermon-card__title">${v.title}</h3>
         <div class="sermon-card__meta">${v.date}</div>
         <div class="sermon-card__actions">
-          <a class="btn" data-play="${v.id}" href="https://www.youtube.com/watch?v=${v.id}" target="_blank" rel="noopener">Watch</a>
+          <a class="btn--ghost" data-play="${v.id}" href="https://www.youtube.com/watch?v=${v.id}" target="_blank" rel="noopener">Watch</a>
           <a class="btn--ghost" href="https://www.youtube.com/watch?v=${v.id}" target="_blank" rel="noopener">Open on YouTube</a>
         </div>
       </div>
