@@ -496,6 +496,82 @@ body {
 }
 /* #endregion /Home - A Word From The Pastor */
 
+/* #region Home - From Gallery */
+/* #gallery-isotope .item {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+#gallery-isotope .item img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  transition: transform 0.3s ease;
+}
+
+#gallery-isotope .item:hover img {
+  transform: scale(1.05);
+}
+
+#gallery-isotope .item .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+#gallery-isotope .item:hover .overlay {
+  opacity: 1;
+} */
+
+/* The masonry container */
+/* Reduce image size and make them responsive */
+#gallery-isotope {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+#gallery-isotope .item {
+  flex: 1 1 220px;          /* smaller base width */
+  max-width: 220px;         /* limit thumbnail width */
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+#gallery-isotope img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Subtle zoom on hover */
+#gallery-isotope img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+/* Adjust spacing for small screens */
+@media (max-width: 768px) {
+  #gallery-isotope .item {
+    flex: 1 1 160px;
+    max-width: 160px;
+  }
+}
+
+@media (max-width: 480px) {
+  #gallery-isotope .item {
+    flex: 1 1 130px;
+    max-width: 130px;
+  }
+}
+/* #endregion /Home - From Gallery */
+
 /* #region Sermons */
 .video-container {
     position: relative;
