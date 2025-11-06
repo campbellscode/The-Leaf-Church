@@ -11,7 +11,7 @@
     <!-- LOAD CSS FILES -->
     <link href="css/main.css" rel="stylesheet" type="text/css">
     <link href="css/custom.css" rel="stylesheet" type="text/css">
-    
+
     <!-- CDNs -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -117,7 +117,7 @@
         </section>
         <!-- subheader close -->
 
-        <div id="map"></div>
+        <!-- <div id="map"></div> -->
 
         <!-- content begin -->
         <div id="content">
@@ -128,23 +128,44 @@
                             <div class="contact_form_holder">
                                 <form id="contact" class="row" name="form1" method="post" action="">
                                     <input type="text" class="form-control" name="name" id="name"
-                                        placeholder="Your name" />
+                                        placeholder="Your name" required style="font-size:2rem;">
 
-                                    <div id="error_email" class="error">Please check your email</div>
-                                    <input type="text" class="form-control" name="email" id="email"
-                                        placeholder="Your email" />
+                                    <div id="error_email" class="error" style="display:none;">Please check your email
+                                    </div>
+                                    <input type="email" class="form-control" name="email" id="email"
+                                        placeholder="Your email" required 
+                                        style="font-size:2rem;border:none !important;background:none !important;outline:none !important;box-shadow: none !important;border-bottom:1px solid #ccc !important;">
 
-                                    <div id="error_message" class="error">Please check your message</div>
-                                    <textarea cols="10" rows="10" name="message" id="message" class="form-control"
-                                        placeholder="Your message"></textarea>
+                                    <div id="error_message" class="error" style="display:none;">Please check your
+                                        message</div>
+                                    <textarea cols="10" rows="8" name="message" id="message" class="form-control"
+                                        placeholder="Your message" required style="font-size:2rem;resize:none;"></textarea>
 
-                                    <div id="mail_success" class="success">Thank you. Your message has been sent.</div>
-                                    <div id="mail_failed" class="error">Error, email not sent</div>
+                                    <div id="mail_success" class="success" style="display:none;">Your message
+                                        has been sent.</div>
+                                    <div id="mail_failed" class="error" style="display:none;">Error, email not sent
+                                    </div>
 
                                     <p id="btnsubmit">
-                                        <input type="submit" id="send" value="Send" class="btn btn-custom" />
+                                        <button type="submit" id="send" class="btn btn-send contact-form-btn mr-3">
+                                            <i class="fa fa-paper-plane"></i> Send
+                                        </button>
                                     </p>
                                 </form>
+
+                                <div id="contactModal" class="modal" style="display:none;">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h2>Thank You!</h2>
+                                            <span class="close">&times;</span>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p style="font-size:1.5rem;" id="modal-message">Your message has been sent!</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+
                             </div>
                         </div>
                     </div>
@@ -176,8 +197,8 @@
                             <div class="divider-line"></div>
 
                             <span class="title">Hours of Operation:</span>
-                            Service - Every Sunday 11AM & 6PM<br>
-                            Bible Study - Every Friday 7PM<br>
+                            <span>Service - Every Sunday 11AM & 6PM</span><br>
+                            <span>Bible Study - Every Friday 7PM</span><br>
 
                             <div class="divider-line"></div>
 
@@ -238,13 +259,15 @@
     <script src="js/jquery.fitvids.js"></script>
     <script src="js/jquery.plugin.js"></script>
     <script src="js/jquery.countdown.js"></script>
+    <!-- <script src="assets/js/jquery.validate.js"></script> -->
     <script src="js/countdown-custom.js"></script>
-    <script src="js/contact.js"></script>
+    <!-- <script src="js/contact.js"></script> -->
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
     <script src="js/map.js"></script>
     <script src="js/wow.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/custom.js"></script>
+    <script src="js/contact-form.js"></script>
 
     <!-- SLIDER REVOLUTION SCRIPTS  -->
     <script type="text/javascript" src="rs-plugin/js/jquery.themepunch.plugins.min.js"></script>

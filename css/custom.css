@@ -710,6 +710,60 @@ body {
     display: none;
 }
 
+.btn-send {
+    font-size: 1.6rem !important;
+    background-color: black !important;
+    color: white !important;    
+    padding-bottom: 6px !important;
+}
+
+.btn-send:hover {
+    background-color: #58ba01 !important;
+    /* border: 2px solid #58ba01 !important; */
+    /* transform: translateY(-2px) !important; */
+    /* filter: brightness(1.08) !important; */
+    /* box-shadow: 0 12px 30px rgba(38, 210, 110, 0.35) !important; */
+}
+
+.contact-info .social-icons a {
+    color: black;               /* default icon color */
+    font-size: 1.8rem;          /* optional: make icons a bit larger */
+    margin: 0 10px;             /* optional: spacing between icons */
+    transition: color 0.3s ease; /* smooth color change */
+}
+
+.contact-info .social-icons a:hover {
+    color: #58ba01;             /* your green hover color */
+}
+
+.contact-info .title {
+    font-size: 2.1rem !important;
+}
+
+.contact-info span {
+    font-size: 1.7rem;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f2f2f2;
+  border-bottom: 1px solid #ccc;
+}
+
+.close {
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #333;
+}
+
+.close:hover {
+  color: #000;
+}
+
 /* Mobile: show clickable link */
 @media (max-width: 768px) {
     .phone-desktop {
@@ -726,6 +780,18 @@ body {
 
     .address-mobile {
         display: inline;
+    }
+
+    .contact-info .social-icons .fa {
+        color: #58ba01;
+        font-size: 2rem;          /* optional: make icons a bit larger */
+        margin: 0 5px;             /* optional: spacing between icons */
+    }
+
+    .contact-info a {
+        font-size: 1.7rem;
+        color: #58ba01;
+        text-decoration: underline;
     }
 }
 
