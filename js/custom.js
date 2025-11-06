@@ -30,44 +30,6 @@
     return h;
   }
 
-  mobile_nav = function () {
-    const CLOSED = 80; // your closed header height
-    const $header = jQuery("header").css({
-      height: CLOSED,
-      overflow: "hidden",
-    });
-    const $panel = jQuery("#mainmenu-container");
-
-    jQuery("#menu-btn")
-      .off("click.mobile")
-      .on("click.mobile", function () {
-        const isOpen = $header.hasClass("open");
-
-        if (isOpen) {
-          $header
-            .removeClass("open")
-            .stop(true, true)
-            .animate({ height: CLOSED }, 300);
-        } else {
-          // IMPORTANT: measure container (not just <ul>) after mobile CSS has taken effect
-          const openH = CLOSED + naturalHeight($panel);
-          $header
-            .addClass("open")
-            .stop(true, true)
-            .animate({ height: openH }, 300);
-        }
-      });
-
-    // reset when back to desktop
-    jQuery(window).on("resize", function () {
-      if (window.matchMedia("(min-width: 992px)").matches) {
-        $header.removeClass("open").css({ height: "", overflow: "" });
-        $panel.css({ display: "" });
-      }
-    });
-  };
-  // close function mobile navigation
-
   // Latest sermons
   // --- Your latest videos: add/remove items here ---
   const SERMONS = [
@@ -724,6 +686,6 @@
       anim();
     });
 
-    mobile_nav();
+    // mobile_nav();
   });
 })(jQuery);

@@ -1,34 +1,188 @@
 /* Fallback: if JS fails entirely, don't trap the page behind the preloader */
-#preloader { display: none; }
+#preloader {
+    display: none;
+}
 
 /* #region Menu */
-/* ===== Desktop (keep icons aligned to the far right of the nav bar) ===== */
-@media (max-width: 991px) {
-    header .social {
-        display: none;
-    }
+/* Prevent wrapping that shoves items around on iPad widths */
+.navbar .container { flex-wrap: nowrap; }
+.navbar-nav { align-items: center; }
+
+/* Hide desktop list below lg, and hide toggler/offcanvas above lg */
+@media (max-width: 991.98px){
+  #desktopNav { display: none !important; }
+}
+@media (min-width: 992px){
+  .navbar-toggler, #mobileNav { display: none !important; }
 }
 
-/* phones + tablets: stack the menu items so the <ul> computes full height */
+/* Optional: set offcanvas width for iPad mini */
+@media (max-width: 991.98px){
+  .offcanvas-end { width: min(380px, 92vw); }
+}
+
+/* Keep everything level with icons */
+.navbar-social a { display:inline-flex; align-items:center; line-height:1; color:#111; }
+
+.navbar {
+    /* margin: 0 !important; */
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
+}
+
+/* ----- Align links with social icons (desktop) ----- */
+.navbar .container {
+    align-items: center;
+}
+
+/* brand, links, icons centered vertically */
+.navbar-nav {
+    align-items: center;
+    gap: .75rem;
+}
+
+/* even spacing */
+.navbar-nav .nav-link {
+    display: inline-flex;
+    /* aligns text like the icons */
+    align-items: center;
+    padding: .6rem .4rem;
+    /* tune to taste */
+    line-height: 1;
+    /* matches icon line-height */
+    position: relative;
+    color: #111;
+    text-decoration: none;
+}
+
+/* Make the social icons sit on the same baseline as links */
+.navbar-social a {
+    display: inline-flex;
+    align-items: center;
+    line-height: 1;
+    font-size: 18px;
+    /* same visual weight as links */
+    color: #111;
+}
+
+.navbar-social a:hover {
+    color: #58ba01;
+}
+
+/* Brand/toggler always anchored; no jump */
+.navbar .container {
+    align-items: center;
+}
+
+/* Color accents */
+:root {
+    --leaf: #58ba01;
+}
+
+.navbar .nav-link {
+    font-size: 1.7rem;
+    position: relative;
+    color: #000;
+    /* or whatever your text color is */
+    text-decoration: none;
+    padding-bottom: 5px;
+    transition: color 0.3s ease;
+}
+
+/* Create the underline as a pseudo-element */
+.navbar-nav .nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 1px;
+    background-color: #58ba01;
+    /* your green color */
+    transition: width 0.3s ease;
+}
+
+/* Animate on hover */
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after {
+    width: 100%;
+}
+
+.navbar .nav-link:hover {
+    color: var(--leaf);
+}
+
+.btn-success {
+    background: var(--leaf);
+    border-color: var(--leaf);
+}
+
+.btn-success:hover {
+    filter: brightness(0.9);
+}
+
+/* Social icons */
+.navbar-nav a,
+.offcanvas a {
+    color: #222;
+    text-decoration: none;
+    font-size: 1.6rem;
+}
+
+.navbar-nav a:hover,
+.offcanvas a:hover {
+    color: var(--leaf);
+}
+
+/* Offcanvas width on phones (looks tight & premium) */
+/* Offcanvas mobile menu – spacing & no clipping */
 @media (max-width: 991px) {
-    #mainmenu {
-        display: block;
+
+    /* give the panel breathing room and keep it clear of the viewport edges */
+    .offcanvas-end {
+        width: min(380px, 92vw);
+        /* not too wide, not cramped */
     }
 
-    #mainmenu>li {
-        float: none !important;
-        /* kill desktop float */
+    .offcanvas-body {
+        padding: 1rem 1.25rem !important;
+        /* restores padding some themes remove */
+        overflow-y: auto;
+    }
+
+    /* restore readable padding for links (themes often zero this) */
+    .offcanvas .navbar-nav {
+        margin: 0;
+        padding: 0;
+    }
+
+    .offcanvas .navbar-nav .nav-link {
         display: block;
+        padding: .75rem .25rem !important;
+        line-height: 1.4;
+    }
+
+    /* donate button full width but not touching the sides */
+    .offcanvas .btn {
         width: 100%;
+        border-radius: 999px;
     }
 
-    /* ensure floats can't collapse height if any remain */
-    #mainmenu::after {
-        content: "";
-        display: block;
-        clear: both;
+    /* optional: thin divider spacing above social row */
+    .offcanvas .border-top {
+        margin-top: .5rem;
     }
 }
+
+/* prevent a horizontal scroll that can visually crop edges on some themes */
+html,
+body {
+    overflow-x: hidden;
+}
+
+
+
+
 
 /* #endregion /Menu */
 
@@ -291,8 +445,20 @@
 /* #endregion /Home - Latest Sermons */
 
 /* #region Sermons */
-.video-container{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;max-width:100%}
-.video-container iframe{position:absolute;inset:0;width:100%;height:100%}
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%
+}
+
+.video-container iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%
+}
 
 .fluid-width-video-wrapper {
     padding-top: 0% !important;

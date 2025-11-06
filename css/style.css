@@ -205,13 +205,36 @@ header .animated {
 /*- - - - - - - - - - - - - - - - - - - - 
 	SUBHEADER
 - - - - - - - - - - - - - - - - - - - - */
-#subheader {
+/* #subheader {
 	padding: 150px 0 70px 0;
 	background: url(../img/bg-subheader.jpg) top;
 	background-size: cover;
 	background-size: cover;
 	text-align: center;
+} */
+
+  #subheader {
+    padding: 150px 0 70px 0;
+    background: url(../img/bg-subheader.jpg) top;
+    background-size: cover;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+
+/* ✅ Only apply subheader margin for small screens */
+@media (max-width: 991px) {
+  #subheader {
+    margin-top: 80px; /* match your mobile navbar height */
+    padding: 150px 0 70px 0;
+    background: url(../img/bg-subheader.jpg) top;
+    background-size: cover;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
 }
+
 
 #subheader h1 {
 	font-family: "Open Sans", Arial, Helvetica, sans-serif;
@@ -3079,13 +3102,13 @@ a:hover,
 }
 
 
-@media (min-width: 992px) and (max-width: 1199px) {
+/* @media (min-width: 992px) and (max-width: 1199px) {
 
 	header .social {
 		display: none;
 	}
 
-}
+} */
 
 
 @media (max-width: 992px) {
@@ -3108,7 +3131,7 @@ a:hover,
 		margin-bottom: 30px;
 	}
 
-	header {
+	/* header {
 		display: none;
 	}
 
@@ -3126,7 +3149,7 @@ a:hover,
 	header.clone #logo {
 		padding-top: 20px;
 		display: block;
-	}
+	} */
 
 	#subheader {
 		padding: 40px 0 40px 0;
