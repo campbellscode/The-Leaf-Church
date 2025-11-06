@@ -572,6 +572,20 @@ body {
 }
 /* #endregion /Home - From Gallery */
 
+/* #region Events */
+.desc h3 {
+    font-size: 1.75rem !important;
+    color: black;
+    text-decoration: underline;
+    /* border-bottom: 1px solid black; */
+    /* border-color: #58ba01; */
+}
+
+.desc span {
+    font-size: 1.4rem !important;
+}
+/* #endregion /Events */
+
 /* #region Sermons */
 .video-container {
     position: relative;
