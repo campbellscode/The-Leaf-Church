@@ -22,9 +22,9 @@
         #gallery-isotope.masonry {
             display: block !important;
             /* cancel any earlier flex override   */
-            column-width: 240px;
+            column-width: 200px;
             /* base tile width                    */
-            column-gap: 16px;
+            column-gap: 12px;
             /* space between columns              */
             margin: 0 auto;
         }
@@ -34,7 +34,7 @@
             display: inline-block;
             /* required for CSS columns           */
             width: 100%;
-            margin: 0 0 16px;
+            margin: 0 0 12px;
             break-inside: avoid-column;
             /* prevent items from being split     */
             -webkit-column-break-inside: avoid;
@@ -53,25 +53,25 @@
         /* Responsive column widths to match home page look */
         @media (max-width: 1200px) {
             #gallery-isotope.masonry {
-                column-width: 220px;
+                column-width: 180px;
             }
         }
 
         @media (max-width: 992px) {
             #gallery-isotope.masonry {
-                column-width: 200px;
+                column-width: 160px;
             }
         }
 
         @media (max-width: 768px) {
             #gallery-isotope.masonry {
-                column-width: 170px;
+                column-width: 130px;
             }
         }
 
         @media (max-width: 576px) {
             #gallery-isotope.masonry {
-                column-width: 140px;
+                column-width: 100px;
             }
         }
     </style>
