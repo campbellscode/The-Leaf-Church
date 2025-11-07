@@ -836,6 +836,102 @@ body {
 
 /* #endregion /Contact */
 
+/* #region Donate */
+.donation-container {
+    background: linear-gradient(180deg, #f8f9fa, #ffffff);
+    min-height: 100vh;
+    padding: 25px;
+    border-radius: 15px;
+}
+
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.container .btn {
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+}
+
+.container .btn-cashapp:hover {
+    color: white !important;
+    background: #00c92e !important;
+}
+
+.btn-paypal {
+    color: black;
+    border: 1px solid #09337f;
+}
+
+.btn-paypal:hover {
+    color: white;
+    background: #09337f;
+}
+
+.btn-venmo {
+    color: black !important;
+    border: 1px solid #008cff;
+}
+
+.btn-venmo:hover {
+    color: white !important;
+    background: #008cff;
+}
+
+.btn-cashapp {
+    color: black !important;
+    border: 1px solid #00c92e !important;
+}
+
+.btn-cashapp:hover {
+    color: white !important;
+    background: #00c92e !important;
+}
+
+
+/* ----- Mobile Devices (Portrait) ----- */
+@media only screen and (max-width: 600px) {
+    .btn-paypal {
+        color: white;
+        background: #09337f;
+    }
+
+    .btn-venmo {
+        color: white !important;
+        background: #008cff;
+    }
+
+    .btn-cashapp {
+        color: white !important;
+        background: #00c92e !important;
+    }
+}
+
+/* ----- Tablets (Portrait + Landscape) ----- */
+@media only screen and (min-width: 601px) and (max-width: 992px) {
+    .btn-paypal {
+        color: white;
+        background: #09337f;
+    }
+
+    .btn-venmo {
+        color: white !important;
+        background: #008cff;
+    }
+
+    .btn-cashapp {
+        color: white !important;
+        background: #00c92e !important;
+    }
+}
+
+/* #endregion /Donate */
+
 /* #region Footer */
 footer {
     background: black;
@@ -866,24 +962,24 @@ footer nav ul li a:hover {
 
 /* Social icons styling */
 footer .social-icons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
 }
 
 footer .social-icons a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  text-decoration: none;
-  font-size: 18px;
-  transition: all 0.3s ease;
-  color: inherit;
-  border: 2px solid currentColor;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    color: inherit;
+    border: 2px solid currentColor;
 }
 
 footer .social-icons .fa {
@@ -891,46 +987,57 @@ footer .social-icons .fa {
 }
 
 /* Brand colors */
-footer .social-icons a[href*="facebook"]   { color: #58ba01; }
-footer .social-icons a[href*="instagram"]  { color: #58ba01; }
-footer .social-icons a[href*="youtube"]    { color: #58ba01; }
-footer .social-icons a[href*="google"]     { color: #58ba01; }
-footer .social-icons a[href^="mailto"]     { color: #58ba01; }
+footer .social-icons a[href*="facebook"] {
+    color: #58ba01;
+}
+
+footer .social-icons a[href*="instagram"] {
+    color: #58ba01;
+}
+
+footer .social-icons a[href*="youtube"] {
+    color: #58ba01;
+}
+
+footer .social-icons a[href*="google"] {
+    color: #58ba01;
+}
+
+footer .social-icons a[href^="mailto"] {
+    color: #58ba01;
+}
 
 /* Hover: background fills with color, icon turns white, border stays colored */
 footer .social-icons a:hover {
-  color: #fff;
-  transform: scale(1.1);
+    color: #fff;
+    transform: scale(1.1);
 }
 
 /* keep brand border color on hover */
 footer .social-icons a[href*="facebook"]:hover {
-  background-color: #1877F2;
-  border-color: #1877F2;
+    background-color: #1877F2;
+    border-color: #1877F2;
 }
 
 footer .social-icons a[href*="instagram"]:hover {
-  background-color: #E1306C;
-  border-color: #E1306C;
+    background-color: #E1306C;
+    border-color: #E1306C;
 }
 
 footer .social-icons a[href*="youtube"]:hover {
-  background-color: #FF0000;
-  border-color: #FF0000;
+    background-color: #FF0000;
+    border-color: #FF0000;
 }
 
 footer .social-icons a[href*="google"]:hover {
-  background-color: #4c82e7;
-  border-color: #4c82e7;
+    background-color: #4c82e7;
+    border-color: #4c82e7;
 }
 
 footer .social-icons a[href^="mailto"]:hover {
-  background-color: #6c757d;
-  border-color: #6c757d;
+    background-color: #6c757d;
+    border-color: #6c757d;
 }
-
-
-
 
 /* ✅ Mobile adjustments */
 @media (max-width: 767px) {
@@ -938,30 +1045,37 @@ footer .social-icons a[href^="mailto"]:hover {
         font-size: 1rem;
     }
 
+    footer nav ul li a {
+        font-size: 1rem;
+    }
+
     footer .row {
-    text-align: center;
-  }
+        text-align: center;
+    }
 
-  footer .col-md-4 {
-    width: 100%;
-    margin-bottom: 10px;
-  }
+    footer .col-md-4 {
+        width: 100%;
+        margin-bottom: 10px;
+    }
 
-  footer nav ul {
-    justify-content: center;
-  }
+    footer nav ul {
+        justify-content: center;
+    }
 
-  footer .col-md-4:first-child {
-    order: 3; /* copyright last */
-  }
+    footer .col-md-4:first-child {
+        order: 3;
+        /* copyright last */
+    }
 
-  footer .col-md-4:nth-child(2) {
-    order: 1; /* social icons first */
-  }
+    footer .col-md-4:nth-child(2) {
+        order: 1;
+        /* social icons first */
+    }
 
-  footer .col-md-4:last-child {
-    order: 2; /* nav links second */
-  }
+    footer .col-md-4:last-child {
+        order: 2;
+        /* nav links second */
+    }
 }
 
 /* #endregion /Footer */
