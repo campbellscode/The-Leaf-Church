@@ -5,24 +5,43 @@
 
 /* #region Menu */
 /* Prevent wrapping that shoves items around on iPad widths */
-.navbar .container { flex-wrap: nowrap; }
-.navbar-nav { align-items: center; }
+.navbar .container {
+    flex-wrap: nowrap;
+}
+
+.navbar-nav {
+    align-items: center;
+}
 
 /* Hide desktop list below lg, and hide toggler/offcanvas above lg */
-@media (max-width: 991.98px){
-  #desktopNav { display: none !important; }
+@media (max-width: 991.98px) {
+    #desktopNav {
+        display: none !important;
+    }
 }
-@media (min-width: 992px){
-  .navbar-toggler, #mobileNav { display: none !important; }
+
+@media (min-width: 992px) {
+
+    .navbar-toggler,
+    #mobileNav {
+        display: none !important;
+    }
 }
 
 /* Optional: set offcanvas width for iPad mini */
-@media (max-width: 991.98px){
-  .offcanvas-end { width: min(380px, 92vw); }
+@media (max-width: 991.98px) {
+    .offcanvas-end {
+        width: min(380px, 92vw);
+    }
 }
 
 /* Keep everything level with icons */
-.navbar-social a { display:inline-flex; align-items:center; line-height:1; color:#111; }
+.navbar-social a {
+    display: inline-flex;
+    align-items: center;
+    line-height: 1;
+    color: #111;
+}
 
 .navbar {
     /* margin: 0 !important; */
@@ -240,6 +259,7 @@ body {
     background: #f0f0f0 !important;
     border-radius: 2px;
 }
+
 /* #endregion /Home */
 
 /* #region Home - Upcoming Events */
@@ -254,6 +274,7 @@ body {
 #page-events .overlay span {
     font-size: 1.4rem !important;
 }
+
 /* #endregion /Home - Upcoming Events */
 
 /* #region Home - About The Church */
@@ -266,6 +287,7 @@ body {
 #section-text span {
     font-size: 1.5rem !important;
 }
+
 /* #endregion /Home - About The Church */
 
 /* #region Home - Latest Sermons */
@@ -369,60 +391,60 @@ body {
 }
 
 .sermon-card__actions {
-  margin-top: 8px;
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
+    margin-top: 8px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
 }
 
 /* Base button styles */
 .btn,
 .btn--ghost {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 36px;
-  padding: 0 12px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1rem;
-  cursor: pointer;
-  border: 2px solid transparent;
-  transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 36px;
+    padding: 0 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.2s ease;
 }
 
 /* Primary red button */
 .btn {
-  background: #cc0000;
-  color: #fff;
-  border-color: #cc0000;
+    background: #cc0000;
+    color: #fff;
+    border-color: #cc0000;
 }
 
 .btn:hover {
-  background: #fff;
-  color: #cc0000;
-  border-color: #cc0000;
+    background: #fff;
+    color: #cc0000;
+    border-color: #cc0000;
 }
 
 /* Ghost/light gray button */
 .btn--ghost {
-  background: #f3f3f3;
-  color: #333;
-  border: 2px solid transparent;
+    background: #f3f3f3;
+    color: #333;
+    border: 2px solid transparent;
 }
 
 .btn--ghost:hover {
-  background: #fff;
-  border-color: #cc0000;
-  color: #cc0000;
+    background: #fff;
+    border-color: #cc0000;
+    color: #cc0000;
 }
 
 /* Alignment tweak for consistency */
 .btn,
 .btn--ghost {
-  line-height: 1;
-  vertical-align: middle;
+    line-height: 1;
+    vertical-align: middle;
 }
 
 /* ---------- Modal ---------- */
@@ -491,47 +513,51 @@ body {
 
 @media (max-width: 768px) {
     #section-text-2 p {
-    font-size: 1.4rem;
+        font-size: 1.4rem;
+    }
 }
-}
+
 /* #endregion /Home - A Word From The Pastor */
 
 /* #region Home - From Gallery */
 /* The masonry container */
 /* Reduce image size and make them responsive */
 #gallery-isotope {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 12px;
-  padding: 45px !important;
-  margin-left: 150px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    padding: 45px !important;
+    margin-left: 150px;
 }
 
 #gallery-isotope .item {
-  flex: 1 1 220px;          /* smaller base width */
-  max-width: 220px;         /* limit thumbnail width */
-  border-radius: 8px;
-  overflow: hidden;
+    flex: 1 1 220px;
+    /* smaller base width */
+    max-width: 220px;
+    /* limit thumbnail width */
+    border-radius: 8px;
+    overflow: hidden;
 }
 
 #gallery-isotope img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 8px;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 /* Subtle zoom on hover */
 #gallery-isotope img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
 /* Applies on most phones & tablets; skips typical desktops */
 @media (hover: none) and (pointer: coarse) {
-  /* non-desktop styles here */
+
+    /* non-desktop styles here */
     #section-gallery {
         display: none;
     }
@@ -539,23 +565,25 @@ body {
 
 /* Everything below desktop width */
 @media (max-width: 1023px) {
-  /* non-desktop styles here */
+
+    /* non-desktop styles here */
     #section-gallery {
         display: none;
     }
 }
 
-  #gallery-isotope .item {
+#gallery-isotope .item {
     flex: 1 1 160px;
     max-width: 160px;
-  }
+}
 
 @media (max-width: 480px) {
-  #gallery-isotope .item {
-    flex: 1 1 130px;
-    max-width: 130px;
-  }
+    #gallery-isotope .item {
+        flex: 1 1 130px;
+        max-width: 130px;
+    }
 }
+
 /* #endregion /Home - From Gallery */
 
 /* #region Events */
@@ -570,6 +598,7 @@ body {
 .desc span {
     font-size: 1.4rem !important;
 }
+
 /* #endregion /Events */
 
 /* #region Sermons */
@@ -657,47 +686,50 @@ body {
 /* The masonry container */
 /* Reduce image size and make them responsive */
 #gallery-isotope {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
 }
 
 #gallery-isotope .item {
-  flex: 1 1 220px;          /* smaller base width */
-  max-width: 220px;         /* limit thumbnail width */
-  border-radius: 8px;
-  overflow: hidden;
+    flex: 1 1 220px;
+    /* smaller base width */
+    max-width: 220px;
+    /* limit thumbnail width */
+    border-radius: 8px;
+    overflow: hidden;
 }
 
 #gallery-isotope img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 8px;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 /* Subtle zoom on hover */
 #gallery-isotope img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
 /* Adjust spacing for small screens */
 @media (max-width: 768px) {
-  #gallery-isotope .item {
-    flex: 1 1 160px;
-    max-width: 160px;
-  }
+    #gallery-isotope .item {
+        flex: 1 1 160px;
+        max-width: 160px;
+    }
 }
 
 @media (max-width: 480px) {
-  #gallery-isotope .item {
-    flex: 1 1 130px;
-    max-width: 130px;
-  }
+    #gallery-isotope .item {
+        flex: 1 1 130px;
+        max-width: 130px;
+    }
 }
+
 /* #endregion /Gallery */
 
 /* #region Contact */
@@ -713,7 +745,7 @@ body {
 .btn-send {
     font-size: 1.6rem !important;
     background-color: black !important;
-    color: white !important;    
+    color: white !important;
     padding-bottom: 6px !important;
 }
 
@@ -726,14 +758,19 @@ body {
 }
 
 .contact-info .social-icons a {
-    color: black;               /* default icon color */
-    font-size: 1.8rem;          /* optional: make icons a bit larger */
-    margin: 0 10px;             /* optional: spacing between icons */
-    transition: color 0.3s ease; /* smooth color change */
+    color: black;
+    /* default icon color */
+    font-size: 1.8rem;
+    /* optional: make icons a bit larger */
+    margin: 0 10px;
+    /* optional: spacing between icons */
+    transition: color 0.3s ease;
+    /* smooth color change */
 }
 
 .contact-info .social-icons a:hover {
-    color: #58ba01;             /* your green hover color */
+    color: #58ba01;
+    /* your green hover color */
 }
 
 .contact-info .title {
@@ -745,23 +782,23 @@ body {
 }
 
 .modal-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  background-color: #f2f2f2;
-  border-bottom: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f2f2f2;
+    border-bottom: 1px solid #ccc;
 }
 
 .close {
-  font-size: 28px;
-  font-weight: bold;
-  cursor: pointer;
-  color: #333;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #333;
 }
 
 .close:hover {
-  color: #000;
+    color: #000;
 }
 
 /* Mobile: show clickable link */
@@ -784,8 +821,10 @@ body {
 
     .contact-info .social-icons .fa {
         color: #58ba01;
-        font-size: 2rem;          /* optional: make icons a bit larger */
-        margin: 0 5px;             /* optional: spacing between icons */
+        font-size: 2rem;
+        /* optional: make icons a bit larger */
+        margin: 0 5px;
+        /* optional: spacing between icons */
     }
 
     .contact-info a {
@@ -796,3 +835,133 @@ body {
 }
 
 /* #endregion /Contact */
+
+/* #region Footer */
+footer {
+    background: black;
+    padding: 50px 0;
+    font-size: 14px;
+}
+
+footer nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+footer nav ul li a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.2s ease;
+    font-size: 1.3rem;
+}
+
+footer nav ul li a:hover {
+    color: #28a745;
+}
+
+/* Social icons styling */
+footer .social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+footer .social-icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 18px;
+  transition: all 0.3s ease;
+  color: inherit;
+  border: 2px solid currentColor;
+}
+
+footer .social-icons .fa {
+    font-size: 1.8rem;
+}
+
+/* Brand colors */
+footer .social-icons a[href*="facebook"]   { color: #58ba01; }
+footer .social-icons a[href*="instagram"]  { color: #58ba01; }
+footer .social-icons a[href*="youtube"]    { color: #58ba01; }
+footer .social-icons a[href*="google"]     { color: #58ba01; }
+footer .social-icons a[href^="mailto"]     { color: #58ba01; }
+
+/* Hover: background fills with color, icon turns white, border stays colored */
+footer .social-icons a:hover {
+  color: #fff;
+  transform: scale(1.1);
+}
+
+/* keep brand border color on hover */
+footer .social-icons a[href*="facebook"]:hover {
+  background-color: #1877F2;
+  border-color: #1877F2;
+}
+
+footer .social-icons a[href*="instagram"]:hover {
+  background-color: #E1306C;
+  border-color: #E1306C;
+}
+
+footer .social-icons a[href*="youtube"]:hover {
+  background-color: #FF0000;
+  border-color: #FF0000;
+}
+
+footer .social-icons a[href*="google"]:hover {
+  background-color: #4c82e7;
+  border-color: #4c82e7;
+}
+
+footer .social-icons a[href^="mailto"]:hover {
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+
+
+
+
+/* ✅ Mobile adjustments */
+@media (max-width: 767px) {
+    footer {
+        font-size: 1rem;
+    }
+
+    footer .row {
+    text-align: center;
+  }
+
+  footer .col-md-4 {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  footer nav ul {
+    justify-content: center;
+  }
+
+  footer .col-md-4:first-child {
+    order: 3; /* copyright last */
+  }
+
+  footer .col-md-4:nth-child(2) {
+    order: 1; /* social icons first */
+  }
+
+  footer .col-md-4:last-child {
+    order: 2; /* nav links second */
+  }
+}
+
+/* #endregion /Footer */
