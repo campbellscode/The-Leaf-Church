@@ -82,11 +82,12 @@
                     <li class="nav-item"><a class="nav-link py-2" href="sermons.html">Sermons</a></li>
                     <li class="nav-item"><a class="nav-link py-2" href="gallery.html">Gallery</a></li>
                     <li class="nav-item"><a class="nav-link py-2" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link py-2" href="donate.html">Donate</a></li>
                 </ul>
 
                 <!-- social bottom -->
-                <hr style="height:0;" class="my-4 p-0" />
-                <a style="width:50px;" class="btn btn-success w-100 rounded-pill text-white my-4" href="#">Donate</a>
+                <!-- <a style="width:50px;" class="btn btn-success w-100 rounded-pill text-white my-4" href="#">Donate</a>
+                <hr style="height:0;" class="mt-4 mb-5 p-0" /> -->
                 <hr style="height:0;" class="mt-4 mb-5 p-0" />
                 <div class="mt-auto text-center">
 
@@ -673,19 +674,19 @@
                     </div>
                     <div class="col-md-4">
                         <div class="social-icons">
-                                <a href="https://www.facebook.com/profile.php?id=61556350205048" target="_blank"><i
-                                        class="fa fa-facebook"></i></a>
-                                <a href="https://www.instagram.com/theleafchurchcincy" target="_blank"><i
-                                        class="fa fa-instagram"></i></a>
-                                <a href="https://www.youtube.com/@theleafchurchcincy" target="_blank"><i
-                                        class="fa fa-youtube-play"></i></a>
-                                <!-- <a href="#"><i class="fa fa-twitter"></i></a> -->
-                                <!-- <a href="#"><i class="fa fa-rss"></i></a> -->
-                                <a href="https://share.google/AYmQxvqO5LvwswVBR" target="_blank"><i
-                                        class="fa fa-google"></i></a>
-                                <a href="mailto:theleafchurch@gmail.com" target="_blank"><i
-                                        class="fa fa-envelope-o"></i></a>
-                            </div>
+                            <a href="https://www.facebook.com/profile.php?id=61556350205048" target="_blank"><i
+                                    class="fa fa-facebook"></i></a>
+                            <a href="https://www.instagram.com/theleafchurchcincy" target="_blank"><i
+                                    class="fa fa-instagram"></i></a>
+                            <a href="https://www.youtube.com/@theleafchurchcincy" target="_blank"><i
+                                    class="fa fa-youtube-play"></i></a>
+                            <!-- <a href="#"><i class="fa fa-twitter"></i></a> -->
+                            <!-- <a href="#"><i class="fa fa-rss"></i></a> -->
+                            <a href="https://share.google/AYmQxvqO5LvwswVBR" target="_blank"><i
+                                    class="fa fa-google"></i></a>
+                            <a href="mailto:theleafchurch@gmail.com" target="_blank"><i
+                                    class="fa fa-envelope-o"></i></a>
+                        </div>
                     </div>
                     <div class="col-md-4">
                         <nav>
@@ -730,35 +731,35 @@
     <script src="js/rev-setting-1.js"></script>
 
     <script>
-// init once
-var $grid = $('#gallery-isotope').isotope({
-  itemSelector: '.item',
-  layoutMode: 'masonry',
-  masonry: { gutter: 12, fitWidth: true },
-  percentPosition: true
-});
+        // init once
+        var $grid = $('#gallery-isotope').isotope({
+            itemSelector: '.item',
+            layoutMode: 'masonry',
+            masonry: { gutter: 12, fitWidth: true },
+            percentPosition: true
+        });
 
-// 1) after images are really loaded
-$grid.imagesLoaded(function(){ $grid.isotope('layout'); });
+        // 1) after images are really loaded
+        $grid.imagesLoaded(function () { $grid.isotope('layout'); });
 
-// 2) after the whole page finishes (fonts, CSS, etc.)
-$(window).on('load', function(){ $grid.isotope('layout'); });
+        // 2) after the whole page finishes (fonts, CSS, etc.)
+        $(window).on('load', function () { $grid.isotope('layout'); });
 
-// 3) after WOW/animate.css or any CSS animations finish
-document.addEventListener('animationend', function(e){
-  if (e.target.closest && e.target.closest('#section-gallery')) {
-    $grid.isotope('layout');
-  }
-}, true);
+        // 3) after WOW/animate.css or any CSS animations finish
+        document.addEventListener('animationend', function (e) {
+            if (e.target.closest && e.target.closest('#section-gallery')) {
+                $grid.isotope('layout');
+            }
+        }, true);
 
-// 4) in case a framework toggles visibility (tabs/carousels/modals)
-$(document).on('shown.bs.tab shown.bs.collapse slid.bs.carousel', function(){
-  $grid.isotope('layout');
-});
+        // 4) in case a framework toggles visibility (tabs/carousels/modals)
+        $(document).on('shown.bs.tab shown.bs.collapse slid.bs.carousel', function () {
+            $grid.isotope('layout');
+        });
 
-// 5) final safety: re-layout once more shortly after first paint
-setTimeout(function(){ $grid.isotope('layout'); }, 350);
-</script>
+        // 5) final safety: re-layout once more shortly after first paint
+        setTimeout(function () { $grid.isotope('layout'); }, 350);
+    </script>
 
 </body>
 
