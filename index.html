@@ -94,76 +94,86 @@
         }
     </style> -->
 
-    <style>        
+    <style>
         /* Card */
         .about-card {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        height: 100%;
-        background: #fff;
-        border-radius: 12px;
-        overflow: hidden; /* needed so rounded corners clip image */
-        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            /* needed so rounded corners clip image */
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .about-card:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
         }
 
         /* Image */
         .about-img {
-        height: 400px;
-        overflow: hidden;
+            height: 400px;
+            overflow: hidden;
         }
 
         .about-img img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
 
         /* Body (stretches) */
         .about-body {
-        display: flex;
-        flex-direction: column;
-        flex: 1;              /* ✅ takes remaining space */
-        padding: 28px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            /* ✅ takes remaining space */
+            padding: 28px;
         }
 
         .about-body h3 {
-        font-size: 1.6rem;
-        margin: 0 0 12px 0;
-        font-weight: 600;
-        min-height: 48px;
+            font-size: 1.6rem;
+            margin: 0 0 12px 0;
+            font-weight: 600;
+            min-height: 48px;
         }
 
         .about-text {
-        color: #555;
-        font-size: 1.3rem;
-        line-height: 1.7;
-        margin: 0;            /* important: avoid random extra space */
+            color: #555;
+            font-size: 1.3rem;
+            line-height: 1.7;
+            margin: 0;
+            /* important: avoid random extra space */
         }
 
         /* Clamp (works for both cards) */
         .clamp-text {
-        overflow: hidden;
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 5;  /* adjust */
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 5;
+            /* adjust */
         }
 
         /* Footer (button pinned bottom) */
         .about-footer {
-        padding: 0 28px 28px;
-        margin-top: auto;       /* ✅ pushes footer to bottom */
+            padding: 0 28px 28px;
+            margin-top: auto;
+            /* ✅ pushes footer to bottom */
         }
 
         .about-footer .st-btn {
-        display: inline-block;
+            display: inline-block;
+        }
+
+        .pl-body p {
+            font-size: 1.7rem !important;
+            font-style: italic;
         }
     </style>
 </head>
@@ -486,59 +496,67 @@
                 <div class="container">
                     <div class="row">
 
-                    <div class="col-md-8 col-md-offset-2 text-center">
-                        <h2>About The Church</h2>
-                        <div class="divider-double"></div>
-                    </div>
-
-                    <div class="col-md-6 wow fadeInRight" data-wow-delay=".75s">
-                        <div class="about-card">
-                        <div class="about-img">
-                            <img src="img/vision-mission.jpeg" alt="Vision & Mission">
+                        <div class="col-md-8 col-md-offset-2 text-center">
+                            <h2>About The Church</h2>
+                            <div class="divider-double"></div>
                         </div>
 
-                        <div class="about-body">
-                            <h3>Vision & Mission</h3>
-                            <p class="about-text clamp-text">
-                            The Leaf Church seeks to fulfill the Great Commission, through bearing the fruit of the Spirit
-                            and thereby fulfilling the principles found in Revelation 22:2: "…the leaves of the tree [of life]
-                            are for the healing of the nations.”
-                            </p>
+                        <div class="col-md-6 wow fadeInRight" data-wow-delay=".75s">
+                            <div class="about-card">
+                                <div class="about-img">
+                                    <img src="img/vision-mission.jpeg" alt="Vision & Mission">
+                                </div>
+
+                                <div class="about-body">
+                                    <h3>Vision & Mission</h3>
+                                    <p class="about-text clamp-text">
+                                        The Leaf Church seeks to fulfill the Great Commission, through bearing the fruit
+                                        of the Spirit
+                                        and thereby fulfilling the principles found in Revelation 22:2: "…the leaves of
+                                        the tree [of life]
+                                        are for the healing of the nations.”
+                                    </p>
+                                </div>
+
+                                <div class="about-footer">
+                                    <a href="about.html#aboutVisionMission" class="st-btn">Read More</a>
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="about-footer">
-                            <a href="about.html#aboutVisionMission" class="st-btn">Read More</a>
-                        </div>
-                        </div>
-                    </div>
+                        <div class="col-md-6 wow fadeInRight" data-wow-delay="1s">
+                            <div class="about-card">
+                                <div class="about-img">
+                                    <img src="img/what-we-believe.jpeg" alt="What We Believe">
+                                </div>
 
-                    <div class="col-md-6 wow fadeInRight" data-wow-delay="1s">
-                        <div class="about-card">
-                        <div class="about-img">
-                            <img src="img/what-we-believe.jpeg" alt="What We Believe">
-                        </div>
+                                <div class="about-body">
+                                    <h3>What We Believe</h3>
+                                    <p class="about-text clamp-text">
+                                        We believe that Jesus is the name of the Father, the Son, and the Holy Ghost.
+                                        (Mat. 28:19; John 5:43,
+                                        10:30, 12:45, 14:8–9; Phil. 2:9-11) All the fullness of the godhead rests bodily
+                                        in Jesus Christ. (Col. 2:9)
+                                        We believe salvation is a free gift to all who repent of their sins, are
+                                        baptized in the name of the Lord Jesus
+                                        Christ, and are filled with the Holy Ghost by the evidence of speaking in other
+                                        tongues as the Spirit gives the
+                                        utterance. (Acts 2:38, 4:12, 10:44–48; Eph. 2:8, 4:5) We believe that we are
+                                        chosen people, separated from the world;
+                                        and that we should live a holy life both inwardly and outwardly. (1 Pet. 2:9; 2
+                                        Cor. 6:17-18)
+                                    </p>
+                                </div>
 
-                        <div class="about-body">
-                            <h3>What We Believe</h3>
-                            <p class="about-text clamp-text">
-                            We believe that Jesus is the name of the Father, the Son, and the Holy Ghost. (Mat. 28:19; John 5:43,
-                            10:30, 12:45, 14:8–9; Phil. 2:9-11) All the fullness of the godhead rests bodily in Jesus Christ. (Col. 2:9)
-                            We believe salvation is a free gift to all who repent of their sins, are baptized in the name of the Lord Jesus
-                            Christ, and are filled with the Holy Ghost by the evidence of speaking in other tongues as the Spirit gives the
-                            utterance. (Acts 2:38, 4:12, 10:44–48; Eph. 2:8, 4:5) We believe that we are chosen people, separated from the world;
-                            and that we should live a holy life both inwardly and outwardly. (1 Pet. 2:9; 2 Cor. 6:17-18)
-                            </p>
+                                <div class="about-footer">
+                                    <a href="about.html#aboutWhatWeBelieve" class="st-btn">Read More</a>
+                                </div>
+                            </div>
                         </div>
-
-                        <div class="about-footer">
-                            <a href="about.html#aboutWhatWeBelieve" class="st-btn">Read More</a>
-                        </div>
-                        </div>
-                    </div>
 
                     </div>
                 </div>
-                </section>
+            </section>
             <!-- section close -->
 
             <!-- section begin -->
@@ -560,7 +578,7 @@
                                         allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
                                 </div>
                             </div>
-                        </div>                        
+                        </div>
                     </div>
                 </div>
             </section>
@@ -571,16 +589,56 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-6 wow fadeInLeft" data-wow-delay=".5s">
-                            <h1>A Word From The Pastor</h1>
-                            <p>
-                                We are Apostolic in doctrine and Pentecostal in experience. We are here to offer
-                                biblically sound healing, beginning with an Acts 2:38–39
-                                experience: repentance, baptism in the name of Jesus Christ, and the infilling of the
-                                Holy Ghost with the evidence of speaking in other tongues
-                                as the Spirit gives utterance. We believe in one God, and His name is Jesus Christ. We
-                                also believe in a lifestyle of holiness and separation
-                                from the world unto the Lord.
-                            </p>
+                            <h1 class="fw-bold">Pastoral Leadership</h1>
+                            <div class="pl-body">
+                                <p>
+                                    The date was May 17th 2015 at First Apostolic Church Sunday night service under the
+                                    ministry of visiting minster Glen Murphy when Jamie Deyhle received the call to
+                                    ministry. Pastor Jamie Deyhle and his wife Jennifer were married on 11/14/2015.
+                                </p>
+
+                                <p>
+                                    His ministry started from knocking doors and teaching home bible studies. In 2015 He
+                                    was given the opportunity to minster alongside his late father at various nursing
+                                    homes.
+                                </p>
+
+                                <p>
+                                    In 2017 a group Bible study/discipleship developed every Friday night in his home
+                                    residence building in the rear, which still continues to this day.
+                                </p>
+
+                                <p>
+                                    In 2019 an opening was made to bring a church service into Three Rivers Nursing
+                                    home.
+                                </p>
+
+                                <p>
+                                    In 2020 He preached every Sunday during the pandemic time to newly won converts in
+                                    our home resident back building until 5/23/21.
+                                </p>
+
+                                <p>
+                                    He held a Sunday night church service where He preached every Sunday in our home
+                                    residence building in the rear which started 1/17/22.
+                                </p>
+
+                                <p>
+                                    On 4/3/22 we were called to launch “The Leaf Church” through a message entitled “The
+                                    Purpose Of The Leaf.”
+                                </p>
+
+                                <p>
+                                    On 9/8/24 pastor Joe Sizemore preached a message entitled “Tera Died In Haran,”
+                                    which was a direct word from the Lord that our ministry was needing to move to full
+                                    time.
+                                </p>
+
+                                <p>
+                                    On 11/23/2024 we launched full time will all services and bible studies being held
+                                    at the church plant where “The Leaf Church” is currently located.
+                                </p>
+                            </div>
 
                             <p>
 
@@ -593,7 +651,8 @@
                         </div>
 
                         <div class="col-md-6 wow fadeInUp">
-                            <img src="img/misc/pic-4-jamie.png" class="img-responsive" alt="">
+                            <img src="img/misc/pic-7-nobg.png" style="height:900px;width:auto;" class="img-responsive"
+                                alt="">
                         </div>
                     </div>
                 </div>
@@ -826,7 +885,7 @@
                     <div class="col-md-4">
                         <nav>
                             <ul>
-                                <li><a href="about.html">About</a></li>                                
+                                <li><a href="about.html">About</a></li>
                                 <li><a href="events.html">Events</a></li>
                                 <li><a href="sermons.html">Sermons</a></li>
                                 <li><a href="gallery.html">Gallery</a></li>
