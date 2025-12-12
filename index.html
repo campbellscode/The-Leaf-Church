@@ -93,6 +93,79 @@
             }
         }
     </style> -->
+
+    <style>        
+        /* Card */
+        .about-card {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        background: #fff;
+        border-radius: 12px;
+        overflow: hidden; /* needed so rounded corners clip image */
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .about-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+        }
+
+        /* Image */
+        .about-img {
+        height: 400px;
+        overflow: hidden;
+        }
+
+        .about-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        }
+
+        /* Body (stretches) */
+        .about-body {
+        display: flex;
+        flex-direction: column;
+        flex: 1;              /* ✅ takes remaining space */
+        padding: 28px;
+        }
+
+        .about-body h3 {
+        font-size: 1.6rem;
+        margin: 0 0 12px 0;
+        font-weight: 600;
+        min-height: 48px;
+        }
+
+        .about-text {
+        color: #555;
+        font-size: 1.3rem;
+        line-height: 1.7;
+        margin: 0;            /* important: avoid random extra space */
+        }
+
+        /* Clamp (works for both cards) */
+        .clamp-text {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 5;  /* adjust */
+        }
+
+        /* Footer (button pinned bottom) */
+        .about-footer {
+        padding: 0 28px 28px;
+        margin-top: auto;       /* ✅ pushes footer to bottom */
+        }
+
+        .about-footer .st-btn {
+        display: inline-block;
+        }
+    </style>
 </head>
 
 <body>
@@ -412,38 +485,60 @@
             <section id="section-text">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-8 col-md-offset-2 text-center wow fadeInUp">
-                            <h2>About The Church</h2>
-                            <div class="divider-double"></div>
+
+                    <div class="col-md-8 col-md-offset-2 text-center">
+                        <h2>About The Church</h2>
+                        <div class="divider-double"></div>
+                    </div>
+
+                    <div class="col-md-6 wow fadeInRight" data-wow-delay=".75s">
+                        <div class="about-card">
+                        <div class="about-img">
+                            <img src="img/vision-mission.jpeg" alt="Vision & Mission">
                         </div>
 
-                        <div class="col-md-4 wow fadeInRight" data-wow-delay=".5s">
-                            <img src="img/misc/pic-1.jpg" class="img-responsive" alt="">
-                            <h3>Vision</h3>
-                            <span>Info</span>
-                            <br>
-                            <br>
-                            <a href="about.html#aboutVision" class="st-btn">Read More</a>
+                        <div class="about-body">
+                            <h3>Vision & Mission</h3>
+                            <p class="about-text clamp-text">
+                            The Leaf Church seeks to fulfill the Great Commission, through bearing the fruit of the Spirit
+                            and thereby fulfilling the principles found in Revelation 22:2: "…the leaves of the tree [of life]
+                            are for the healing of the nations.”
+                            </p>
                         </div>
-                        <div class="col-md-4 wow fadeInRight" data-wow-delay=".75s">
-                            <img src="img/misc/pic-2.jpg" class="img-responsive" alt="">
-                            <h3>Mission</h3>
-                            <span>Info</span>
-                            <br>
-                            <br>
+
+                        <div class="about-footer">
                             <a href="about.html#aboutMission" class="st-btn">Read More</a>
                         </div>
-                        <div class="col-md-4 wow fadeInRight" data-wow-delay="1s">
-                            <img src="img/misc/pic-3.jpg" class="img-responsive" alt="">
-                            <h3>What We Believe</h3>
-                            <span>Info</span>
-                            <br>
-                            <br>
-                            <a href="about.html#aboutWhatWeBelieve" class="st-btn">Read More</a>
                         </div>
                     </div>
+
+                    <div class="col-md-6 wow fadeInRight" data-wow-delay="1s">
+                        <div class="about-card">
+                        <div class="about-img">
+                            <img src="img/what-we-believe.jpeg" alt="What We Believe">
+                        </div>
+
+                        <div class="about-body">
+                            <h3>What We Believe</h3>
+                            <p class="about-text clamp-text">
+                            We believe that Jesus is the name of the Father, the Son, and the Holy Ghost. (Mat. 28:19; John 5:43,
+                            10:30, 12:45, 14:8–9; Phil. 2:9-11) All the fullness of the godhead rests bodily in Jesus Christ. (Col. 2:9)
+                            We believe salvation is a free gift to all who repent of their sins, are baptized in the name of the Lord Jesus
+                            Christ, and are filled with the Holy Ghost by the evidence of speaking in other tongues as the Spirit gives the
+                            utterance. (Acts 2:38, 4:12, 10:44–48; Eph. 2:8, 4:5) We believe that we are chosen people, separated from the world;
+                            and that we should live a holy life both inwardly and outwardly. (1 Pet. 2:9; 2 Cor. 6:17-18)
+                            </p>
+                        </div>
+
+                        <div class="about-footer">
+                            <a href="about.html#aboutWhatWeBelieve" class="st-btn">Read More</a>
+                        </div>
+                        </div>
+                    </div>
+
+                    </div>
                 </div>
-            </section>
+                </section>
             <!-- section close -->
 
             <!-- section begin -->
