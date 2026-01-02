@@ -942,6 +942,10 @@ footer .social-icons a[href*="youtube"] {
     color: #58ba01;
 }
 
+footer .social-icons a[href*="tiktok"] {
+    color: #58ba01;
+}
+
 footer .social-icons a[href*="google"] {
     color: #58ba01;
 }
@@ -970,6 +974,11 @@ footer .social-icons a[href*="instagram"]:hover {
 footer .social-icons a[href*="youtube"]:hover {
     background-color: #FF0000;
     border-color: #FF0000;
+}
+
+footer .social-icons a[href*="tiktok"]:hover {
+    background-color: #000000; /* or #111 */
+    border-color: #ffffff;
 }
 
 footer .social-icons a[href*="google"]:hover {
