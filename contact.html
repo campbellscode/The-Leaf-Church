@@ -223,16 +223,79 @@
                                             style="font-size:2rem;padding-left:40px;resize:none;"></textarea>
                                     </div>
 
+                                    <!-- How did you hear about us? -->
+                                    <div style="
+                                        position:relative;
+                                        display:flex;
+                                        align-items:center;
+                                    ">
+                                        <!-- Left icon -->
+                                        <i class="fa fa-bullhorn"
+                                        style="
+                                                position:absolute;
+                                                left:10px;
+                                                color:black;
+                                                font-size:1.8rem;
+                                                pointer-events:none;
+                                        ">
+                                        </i>
+
+                                        <!-- Right caret -->
+                                        <i class="fa fa-chevron-down"
+                                        style="
+                                                position:absolute;
+                                                right:10px;
+                                                color:black;
+                                                font-size:1.4rem;
+                                                pointer-events:none;
+                                        ">
+                                        </i>
+
+                                        <select class="form-control"
+                                                name="referral"
+                                                id="referral"
+                                                required
+                                                style="
+                                                    font-size:2rem;
+                                                    height:60px;
+                                                    padding:0 40px;
+                                                    padding-left:40px;
+
+                                                    background:none !important;
+                                                    border:none !important;
+                                                    border-bottom:1px solid #ccc !important;
+                                                    box-shadow:none !important;
+                                                    outline:none !important;
+
+                                                    appearance:none;
+                                                    -webkit-appearance:none;
+                                                    -moz-appearance:none;
+
+                                                    display:flex;
+                                                    align-items:center;
+                                                ">
+                                            <option value="" selected disabled>How did you hear about us?</option>
+                                            <option value="Facebook">Facebook</option>
+                                            <option value="Instagram">Instagram</option>
+                                            <option value="YouTube">YouTube</option>
+                                            <option value="TikTok">TikTok</option>
+                                            <option value="Google">Google</option>
+                                        </select>
+                                    </div>
+
+                                    <div id="error_referral" class="error" style="display:none;">Please tell us how you heard about us</div>
+
                                     <div id="mail_success" class="success" style="display:none;">Your message
                                         has been sent.</div>
                                     <div id="mail_failed" class="error" style="display:none;">Error, email not sent
                                     </div>
 
-                                    <p id="btnsubmit">
-                                        <button type="submit" id="send" class="btn btn-send contact-form-btn mr-3">
+                                    <p id="btnsubmit" style="display:flex; justify-content:flex-end;">
+                                        <button type="submit" id="send" class="btn btn-send contact-form-btn">
                                             <i class="fa fa-paper-plane"></i> Send
                                         </button>
                                     </p>
+
                                 </form>
 
                                 <div id="contactModal" class="modal" style="display:none;">

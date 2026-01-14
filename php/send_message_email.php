@@ -13,9 +13,21 @@ $response = ['success' => false, 'errors' => [], 'message' => ''];
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $name    = trim(strip_tags($_POST["name"] ?? ''));
-    $name    = str_replace(["\r","\n"], ' ', $name);
+    $name    = str_replace(["\r", "\n"], ' ', $name);
     $email   = filter_var(trim($_POST["email"] ?? ''), FILTER_SANITIZE_EMAIL);
     $message = trim($_POST["message"] ?? '');
+
+    // NEW: referral dropdown
+    $referral = trim(strip_tags($_POST["referral"] ?? ''));
+
+    // Allowed values (keep in sync with the <option value="..."> list)
+    $allowed_referrals = [
+        'Facebook',
+        'Instagram',
+        'YouTube',
+        'TikTok',
+        'Google'
+    ];
 
     // Basic validation
     if ($name === '') {
@@ -30,6 +42,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $response['errors']['message'] = "The message is too long. Please keep it under 1000 characters.";
     }
 
+    // NEW: validate referral
+    if ($referral === '' || !in_array($referral, $allowed_referrals, true)) {
+        $response['errors']['referral'] = "Please tell us how you heard about us.";
+    }
+
     if (empty($response['errors'])) {
         $mail = new PHPMailer(true);
         try {
@@ -42,8 +59,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $mail->SMTPAutoTLS = false;
             $mail->Port        = 25;
 
-            $mail->setFrom('contact@theleafchurchcincy.org', 'The Leaf Church');
-            // $mail->addAddress('theleafchurch@gmail.com');
+            $mail->setFrom('contact-form@theleafchurchcincy.org', 'The Leaf Church');
+            $mail->addAddress('theleafchurch@gmail.com');
             $mail->addAddress('leelantus@proton.me');
             if ($email) {
                 $mail->addReplyTo($email, $name);
@@ -51,7 +68,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
             $mail->isHTML(false);
             $mail->Subject = 'Contact Message from ' . $name;
-            $mail->Body    = "Name: $name\nEmail: $email\n\nMessage:\n$message\n";
+
+            // NEW: include referral in email body
+            $mail->Body =
+                "Name: $name\n" .
+                "Email: $email\n\n" .
+                "Message:\n$message\n\n" .
+                "How did you hear about us? $referral\n";
 
             $mail->send();
             $response['success'] = true;

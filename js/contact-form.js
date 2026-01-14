@@ -37,7 +37,9 @@ $(document).ready(function () {
         }
       },
       error: function (xhr, status, error) {
-        console.log('Error:', error);
+        console.log('AJAX Error:', status, error);
+        console.log('Response status:', xhr.status);
+        console.log('Response text:', xhr.responseText); // <-- THIS shows the real issue
         $('#mail_failed').text('An error occurred. Please try again.').show();
       }
     });
